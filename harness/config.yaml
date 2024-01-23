@@ -6,7 +6,7 @@ pipeline:
   tags: {}
   stages:
     - stage:
-        name: build test and run
+        name: build
         identifier: build_test_and_run
         type: CI
         spec:
@@ -19,6 +19,13 @@ pipeline:
                   spec:
                     shell: Sh
                     command: npm install
+              - step:
+                  type: Run
+                  name: build prod
+                  identifier: build_prod
+                  spec:
+                    shell: Sh
+                    command: npm build
           platform:
             os: Linux
             arch: Amd64
