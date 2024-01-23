@@ -32,3 +32,9 @@ pipeline:
           runtime:
             type: Cloud
             spec: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: YOUR_CODE_REPO_CONNECTOR_ID
+        repoName: YOUR_REPO_NAME
+        build: <+input>
