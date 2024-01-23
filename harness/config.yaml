@@ -1,0 +1,36 @@
+pipeline:
+  name: dev
+  identifier: dev
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: build
+        identifier: build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: hassan_docker
+                    repo: example-ci-cd-app
+                    tags:
+                      - dev
+  properties:
+    ci:
+      codebase:
+        connectorRef: hsaabexampleci
+        build: <+input>
