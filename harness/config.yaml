@@ -7,28 +7,30 @@ pipeline:
   stages:
     - stage:
         name: build
-        identifier: build_test_and_run
+        identifier: build
+        description: ""
         type: CI
         spec:
-          execution:
-            steps:
-              - step:
-                  type: Run
-                  name: install node modules
-                  identifier: install_node_modules
-                  spec:
-                    shell: Sh
-                    command: npm install
-              - step:
-                  type: Run
-                  name: build prod
-                  identifier: build_prod
-                  spec:
-                    shell: Sh
-                    command: npm build
+          cloneCodebase: true
           platform:
             os: Linux
             arch: Amd64
           runtime:
             type: Cloud
             spec: {}
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: hassan_docker
+                    repo: example-ci-cd-app
+                    tags:
+                      - dev
+  properties:
+    ci:
+      codebase:
+        connectorRef: hsaabexampleci
+        build: <+input>
