@@ -8,7 +8,7 @@ pipeline:
     - stage:
         name: build test and run
         identifier: build_test_and_run
-        type: Custom
+        type: CI
         spec:
           execution:
             steps:
