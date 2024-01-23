@@ -6,28 +6,22 @@ pipeline:
   tags: {}
   stages:
     - stage:
-        name: build
-        identifier: build
-        description: ""
+        name: build test and run
+        identifier: build_test_and_run
         type: Custom
         spec:
           execution:
             steps:
               - step:
-                  type: ShellScript
-                  name: build
-                  identifier: build
+                  type: Run
+                  name: install node modules
+                  identifier: install_node_modules
                   spec:
-                    shell: PowerShell
-                    executionTarget: {}
-                    source:
-                      type: Inline
-                      spec:
-                        script: |-
-                          npm install
-                          npm run build --if-present
-                          npm test
-                    environmentVariables: []
-                    outputVariables: []
-                  timeout: 10m
-        tags: {}
+                    shell: Sh
+                    command: npm install
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
