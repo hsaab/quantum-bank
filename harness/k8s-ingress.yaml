@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: example-react-app
 spec:
-  ingressClassName: ingress-nginx
+  ingressClassName: nginx
   rules:
   - host: localhost
     http:
