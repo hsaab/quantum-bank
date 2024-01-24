@@ -34,3 +34,5 @@ pipeline:
       codebase:
         connectorRef: hsaabexampleci
         build: <+input>
+  delegateSelectors:
+    - helm-delegate
