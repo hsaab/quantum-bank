@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Ingress
+metadata:
+  name: example-react-app
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: example-react-app
+          servicePort: 80
