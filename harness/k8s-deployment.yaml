@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-react-app
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: example-react-app
+  template:
+    metadata:
+      labels:
+        app: example-react-app
+    spec:
+      containers:
+      - image: https://index.docker.io/v2/hassansaab/example-ci-cd-app:dev
+        name: example-ci-cd-app
+        ports:
+        - containerPort: 80
