@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: example-react-app
 spec:
+  ingressClassName: example-react-app
   rules:
   - host: localhost
     http:
@@ -10,5 +11,7 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          serviceName: example-react-app
-          servicePort: 80
+          service:
+            name: example-react-app
+            port:
+              number: 80
