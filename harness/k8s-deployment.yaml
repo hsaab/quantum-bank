@@ -14,7 +14,7 @@ spec:
         app: example-react-app
     spec:
       containers:
-      - image: https://index.docker.io/v2/hassansaab/example-ci-cd-app:dev
+      - image: hassansaab/example-ci-cd-app:dev
         name: example-ci-cd-app
         ports:
         - containerPort: 80
