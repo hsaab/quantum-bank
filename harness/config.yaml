@@ -28,7 +28,7 @@ pipeline:
                     connectorRef: hassan_docker
                     repo: hassansaab/example-ci-cd-app
                     tags:
-                      - dev
+                      - <+pipeline.sequenceId>
     - stage:
         name: k8 deployment
         identifier: k8_deployment
