@@ -8,27 +8,9 @@ pipeline:
     - stage:
         name: build
         identifier: build
-        description: ""
-        type: CI
-        spec:
-          cloneCodebase: true
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
-            type: Cloud
-            spec: {}
-          execution:
-            steps:
-              - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
-                  identifier: BuildAndPushDockerRegistry_1
-                  spec:
-                    connectorRef: hassan_docker
-                    repo: hassansaab/example-ci-cd-app
-                    tags:
-                      - <+pipeline.sequenceId>
+        template:
+          templateRef: build_and_push_to_docker
+          versionLabel: "1"
     - stage:
         name: k8 deployment
         identifier: k8_deployment
