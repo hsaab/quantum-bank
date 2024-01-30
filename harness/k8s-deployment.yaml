@@ -14,7 +14,7 @@ spec:
         app: example-react-app
     spec:
       containers:
-      - image: <+"hassansaab/example-ci-cd-app:" + <+pipeline.sequenceId>>
+      - image: hassansaab/example-ci-cd-app:29
         name: example-ci-cd-app
         ports:
         - containerPort: 80
