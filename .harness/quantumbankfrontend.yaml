@@ -1,0 +1,5 @@
+service:
+  name: quantum-bank-frontend
+  identifier: quantumbankfrontend
+  orgIdentifier: SE_Sandbox
+  projectIdentifier: devX_super_team
