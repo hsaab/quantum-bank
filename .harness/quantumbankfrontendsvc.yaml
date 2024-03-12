@@ -3,3 +3,22 @@ service:
   identifier: quantumbankfrontendsvc
   orgIdentifier: SE_Sandbox
   projectIdentifier: devX_super_team
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: quantum_bank_frontend_k8s
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: quantumbank
+                  gitFetchType: Branch
+                  paths:
+                    - .harness/hsaab-quantum-bank-frontend-service.yaml
+                    - .harness/hsaab-quantum-bank-frontend-deployment.yaml
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+    type: Kubernetes
