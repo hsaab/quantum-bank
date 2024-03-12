@@ -3,6 +3,8 @@ kind: Service
 metadata:
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"cloud.google.com/neg":"{\"ingress\":true}"},"creationTimestamp":"2024-03-12T14:35:22Z","finalizers":["service.kubernetes.io/load-balancer-cleanup"],"labels":{"app":"hsaab-quantum-bank-frontend-deployment"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{".":{},"f:app":{}}},"f:spec":{"f:allocateLoadBalancerNodePorts":{},"f:externalTrafficPolicy":{},"f:internalTrafficPolicy":{},"f:ports":{".":{},"k:{\"port\":80,\"protocol\":\"TCP\"}":{".":{},"f:port":{},"f:protocol":{},"f:targetPort":{}}},"f:selector":{},"f:sessionAffinity":{},"f:type":{}}},"manager":"GoogleCloudConsole","operation":"Update","time":"2024-03-12T14:35:22Z"},{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:finalizers":{".":{},"v:\"service.kubernetes.io/load-balancer-cleanup\"":{}}},"f:status":{"f:loadBalancer":{"f:ingress":{}}}},"manager":"cloud-controller-manager","operation":"Update","subresource":"status","time":"2024-03-12T14:35:51Z"}],"name":"hsaab-quantum-bank-frontend-deployment-service","namespace":"hsaab","resourceVersion":"48281","uid":"01595ec3-5e6f-4a06-aacc-16c58cfeafc7"},"spec":{"allocateLoadBalancerNodePorts":true,"clusterIP":"34.118.232.68","clusterIPs":["34.118.232.68"],"externalTrafficPolicy":"Cluster","internalTrafficPolicy":"Cluster","ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"nodePort":31701,"port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"hsaab-quantum-bank-frontend-deployment"},"sessionAffinity":"None","type":"LoadBalancer"},"status":{"loadBalancer":{"ingress":[{"ip":"34.139.198.163"}]}}}
   creationTimestamp: "2024-03-12T14:35:22Z"
   finalizers:
   - service.kubernetes.io/load-balancer-cleanup
@@ -47,9 +49,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2024-03-12T14:35:51Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2024-03-12T18:31:07Z"
   name: hsaab-quantum-bank-frontend-deployment-service
   namespace: hsaab
-  resourceVersion: "48281"
+  resourceVersion: "211011"
   uid: 01595ec3-5e6f-4a06-aacc-16c58cfeafc7
 spec:
   allocateLoadBalancerNodePorts: true
