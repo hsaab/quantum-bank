@@ -1,0 +1,7 @@
+environment:
+  name: hsaab-dev-env
+  identifier: hsaabdevenv
+  accountId: 6_vVHzo9Qeu9fXvj-AcbCQ
+  orgIdentifier: SE_Sandbox
+  projectIdentifier: devX_super_team
+  type: PreProduction
