@@ -132,7 +132,7 @@ spec:
         harness.io/release-name: release-3ef31e
     spec:
       containers:
-      - image: hsaab/quantum-bank:8
+      - image: hsaab/quantum-bank:9
         imagePullPolicy: IfNotPresent
         name: quantum-bank-1
         resources:
