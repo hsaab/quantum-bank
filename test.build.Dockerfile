@@ -5,7 +5,7 @@ WORKDIR /usr/app
 COPY ./package.json /usr/app/package.json
 COPY ./package-lock.json /usr/app/package-lock.json
 
-RUN npm install react-scripts
+RUN npm install -g react-scripts
 RUN npm install react
 RUN npm install react-dom
 RUN npm install @testing-library/jest-dom
