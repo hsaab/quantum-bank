@@ -10,5 +10,5 @@ RUN npm install react
 RUN npm install react-dom
 RUN npm install @testing-library/jest-dom
 RUN npm install @testing-library/user-event
-RUN npm install testing-library/react
+RUN npm install @testing-library/react
 RUN npm install react-test-renderer
