@@ -12,3 +12,5 @@ RUN npm install -g @testing-library/jest-dom
 RUN npm install -g @testing-library/user-event
 RUN npm install -g @testing-library/react
 RUN npm install -g react-test-renderer
+
+COPY . .
