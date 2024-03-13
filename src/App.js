@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Updating....updating... sss blahski
+          Updating....updating... sss blahski blahski
         </a>
       </header>
     </div>
