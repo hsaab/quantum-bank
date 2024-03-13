@@ -5,12 +5,8 @@ WORKDIR /usr/app
 COPY ./package.json /usr/app/package.json
 COPY ./package-lock.json /usr/app/package-lock.json
 
-RUN npm install -g react-scripts
-RUN npm install -g react
-RUN npm install -g react-dom
-RUN npm install -g @testing-library/jest-dom
-RUN npm install -g @testing-library/user-event
-RUN npm install -g @testing-library/react
-RUN npm install -g react-test-renderer
+RUN npm install
 
 COPY . .
+
+CMD ["npm","start"]
