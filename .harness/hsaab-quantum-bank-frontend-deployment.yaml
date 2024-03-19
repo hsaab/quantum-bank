@@ -1,124 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    autopilot.gke.io/resource-adjustment: '{"input":{"containers":[{"name":"quantum-bank-1"}]},"output":{"containers":[{"limits":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"},"requests":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"},"name":"quantum-bank-1"}]},"modified":true}'
-    autopilot.gke.io/warden-version: 2.7.52
-    deployment.kubernetes.io/revision: "3"
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"autopilot.gke.io/resource-adjustment":"{\"input\":{\"containers\":[{\"name\":\"quantum-bank-1\"}]},\"output\":{\"containers\":[{\"limits\":{\"cpu\":\"500m\",\"ephemeral-storage\":\"1Gi\",\"memory\":\"2Gi\"},\"requests\":{\"cpu\":\"500m\",\"ephemeral-storage\":\"1Gi\",\"memory\":\"2Gi\"},\"name\":\"quantum-bank-1\"}]},\"modified\":true}","autopilot.gke.io/warden-version":"2.7.52","deployment.kubernetes.io/revision":"2"},"creationTimestamp":"2024-03-12T14:44:24Z","generation":5,"labels":{"app":"hsaab-quantum-bank-frontend-deployment"},"managedFields":[{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:spec":{"f:replicas":{}}},"manager":"vpa-recommender","operation":"Update","subresource":"scale"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{".":{},"f:app":{}}},"f:spec":{"f:progressDeadlineSeconds":{},"f:revisionHistoryLimit":{},"f:selector":{},"f:strategy":{"f:rollingUpdate":{".":{},"f:maxSurge":{},"f:maxUnavailable":{}},"f:type":{}},"f:template":{"f:metadata":{"f:labels":{".":{},"f:app":{}}},"f:spec":{"f:containers":{"k:{\"name\":\"quantum-bank-1\"}":{".":{},"f:image":{},"f:imagePullPolicy":{},"f:name":{},"f:resources":{},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{}}},"f:dnsPolicy":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{},"f:terminationGracePeriodSeconds":{}}}}},"manager":"GoogleCloudConsole","operation":"Update","time":"2024-03-12T14:44:24Z"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{"f:deployment.kubernetes.io/revision":{}}},"f:status":{"f:availableReplicas":{},"f:conditions":{".":{},"k:{\"type\":\"Available\"}":{".":{},"f:lastTransitionTime":{},"f:lastUpdateTime":{},"f:message":{},"f:reason":{},"f:status":{},"f:type":{}},"k:{\"type\":\"Progressing\"}":{".":{},"f:lastTransitionTime":{},"f:lastUpdateTime":{},"f:message":{},"f:reason":{},"f:status":{},"f:type":{}}},"f:observedGeneration":{},"f:readyReplicas":{},"f:replicas":{},"f:updatedReplicas":{}}},"manager":"kube-controller-manager","operation":"Update","subresource":"status","time":"2024-03-12T18:51:31Z"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{"f:kubectl.kubernetes.io/last-applied-configuration":{}}},"f:spec":{"f:template":{"f:metadata":{"f:labels":{"f:harness.io/release-name":{}}}}}},"manager":"kubectl-client-side-apply","operation":"Update","time":"2024-03-12T18:51:31Z"}],"name":"hsaab-quantum-bank-frontend-deployment","namespace":"hsaab","resourceVersion":"225157","uid":"c6334c03-390f-4cf9-be59-495f48a5e165"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app":"hsaab-quantum-bank-frontend-deployment"}},"strategy":{"rollingUpdate":{"maxSurge":"25%","maxUnavailable":"25%"},"type":"RollingUpdate"},"template":{"metadata":{"labels":{"app":"hsaab-quantum-bank-frontend-deployment","harness.io/release-name":"release-3ef31e"}},"spec":{"containers":[{"image":"hsaab/quantum-bank:17","imagePullPolicy":"IfNotPresent","name":"quantum-bank-1","resources":{"limits":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"},"requests":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"}},"securityContext":{"capabilities":{"drop":["NET_RAW"]}},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{"seccompProfile":{"type":"RuntimeDefault"}},"terminationGracePeriodSeconds":30,"tolerations":[{"effect":"NoSchedule","key":"kubernetes.io/arch","operator":"Equal","value":"amd64"}]}}},"status":{"availableReplicas":1,"conditions":[{"lastTransitionTime":"2024-03-12T14:44:30Z","lastUpdateTime":"2024-03-12T14:44:30Z","message":"Deployment has minimum availability.","reason":"MinimumReplicasAvailable","status":"True","type":"Available"},{"lastTransitionTime":"2024-03-12T14:44:24Z","lastUpdateTime":"2024-03-12T18:31:10Z","message":"ReplicaSet \"hsaab-quantum-bank-frontend-deployment-5cd79486d9\" has successfully progressed.","reason":"NewReplicaSetAvailable","status":"True","type":"Progressing"}],"observedGeneration":5,"readyReplicas":1,"replicas":1,"updatedReplicas":1}}
-  creationTimestamp: "2024-03-12T14:44:24Z"
-  generation: 6
-  labels:
-    app: hsaab-quantum-bank-frontend-deployment
-  managedFields:
-  - apiVersion: apps/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:spec:
-        f:replicas: {}
-    manager: vpa-recommender
-    operation: Update
-    subresource: scale
-  - apiVersion: apps/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:labels:
-          .: {}
-          f:app: {}
-      f:spec:
-        f:progressDeadlineSeconds: {}
-        f:revisionHistoryLimit: {}
-        f:selector: {}
-        f:strategy:
-          f:rollingUpdate:
-            .: {}
-            f:maxSurge: {}
-            f:maxUnavailable: {}
-          f:type: {}
-        f:template:
-          f:metadata:
-            f:labels:
-              .: {}
-              f:app: {}
-          f:spec:
-            f:containers:
-              k:{"name":"quantum-bank-1"}:
-                .: {}
-                f:imagePullPolicy: {}
-                f:name: {}
-                f:resources: {}
-                f:terminationMessagePath: {}
-                f:terminationMessagePolicy: {}
-            f:dnsPolicy: {}
-            f:restartPolicy: {}
-            f:schedulerName: {}
-            f:securityContext: {}
-            f:terminationGracePeriodSeconds: {}
-    manager: GoogleCloudConsole
-    operation: Update
-    time: "2024-03-12T14:44:24Z"
-  - apiVersion: apps/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          f:kubectl.kubernetes.io/last-applied-configuration: {}
-      f:spec:
-        f:template:
-          f:metadata:
-            f:labels:
-              f:harness.io/release-name: {}
-          f:spec:
-            f:containers:
-              k:{"name":"quantum-bank-1"}:
-                f:image: {}
-    manager: kubectl-client-side-apply
-    operation: Update
-    time: "2024-03-12T20:10:44Z"
-  - apiVersion: apps/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          f:deployment.kubernetes.io/revision: {}
-      f:status:
-        f:availableReplicas: {}
-        f:conditions:
-          .: {}
-          k:{"type":"Available"}:
-            .: {}
-            f:lastTransitionTime: {}
-            f:lastUpdateTime: {}
-            f:message: {}
-            f:reason: {}
-            f:status: {}
-            f:type: {}
-          k:{"type":"Progressing"}:
-            .: {}
-            f:lastTransitionTime: {}
-            f:lastUpdateTime: {}
-            f:message: {}
-            f:reason: {}
-            f:status: {}
-            f:type: {}
-        f:observedGeneration: {}
-        f:readyReplicas: {}
-        f:replicas: {}
-        f:updatedReplicas: {}
-    manager: kube-controller-manager
-    operation: Update
-    subresource: status
-    time: "2024-03-12T20:10:50Z"
   name: hsaab-quantum-bank-frontend-deployment
   namespace: hsaab
-  resourceVersion: "281123"
-  uid: c6334c03-390f-4cf9-be59-495f48a5e165
+  labels:
+    app: hsaab-quantum-bank-frontend-deployment
 spec:
-  progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: hsaab-quantum-bank-frontend-deployment
@@ -126,62 +14,22 @@ spec:
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: hsaab-quantum-bank-frontend-deployment
-        harness.io/release-name: release-3ef31e
     spec:
       containers:
-      - image: hsaab/quantum-bank:43
-        imagePullPolicy: IfNotPresent
-        name: quantum-bank-1
+      - name: quantum-bank-1
+        image: hsaab/quantum-bank:43
         resources:
-          limits:
-            cpu: 500m
-            ephemeral-storage: 1Gi
-            memory: 2Gi
           requests:
             cpu: 500m
-            ephemeral-storage: 1Gi
+            memory: 2Gi
+          limits:
+            cpu: 500m
             memory: 2Gi
         securityContext:
           capabilities:
             drop:
             - NET_RAW
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext:
-        seccompProfile:
-          type: RuntimeDefault
-      terminationGracePeriodSeconds: 30
-      tolerations:
-      - effect: NoSchedule
-        key: kubernetes.io/arch
-        operator: Equal
-        value: amd64
-status:
-  availableReplicas: 1
-  conditions:
-  - lastTransitionTime: "2024-03-12T14:44:30Z"
-    lastUpdateTime: "2024-03-12T14:44:30Z"
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  - lastTransitionTime: "2024-03-12T14:44:24Z"
-    lastUpdateTime: "2024-03-12T20:10:50Z"
-    message: ReplicaSet "hsaab-quantum-bank-frontend-deployment-784f4859" has successfully
-      progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  observedGeneration: 6
-  readyReplicas: 1
-  replicas: 1
-  updatedReplicas: 1
