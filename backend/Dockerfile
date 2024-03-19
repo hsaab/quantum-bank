@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /usr/src/app
 
 # Copy the current directory contents into the container at /usr/src/app
-COPY . .
+COPY ./backend .
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
