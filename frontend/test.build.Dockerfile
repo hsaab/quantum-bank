@@ -6,7 +6,6 @@ COPY ./frontend/package.json /usr/app/package.json
 COPY ./frontend/package-lock.json /usr/app/package-lock.json
 
 RUN npm install -g react-scripts
-RUN npm install
 
 COPY ./frontend .
 
