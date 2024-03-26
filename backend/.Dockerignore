@@ -7,3 +7,4 @@ Dockerfile.prod
 kube
 venv
 __pycache__
+venv
