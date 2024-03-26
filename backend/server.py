@@ -46,6 +46,7 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
+        print("yo")
         message = query_params.get('msg', [''])[0]  # Default to empty string if not provided
         self.wfile.write(f"Echo: {message}".encode())
 
