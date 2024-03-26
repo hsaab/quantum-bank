@@ -17,7 +17,7 @@ class TestHTTPServer(unittest.TestCase):
         self.conn.request("GET", "/hello")
         response = self.conn.getresponse()
         self.assertEqual(response.status, 200)
-        self.assertIn("Hello, Worl", response.read().decode())
+        self.assertIn("Hello, World!", response.read().decode())
 
     def test_time_page(self):
         self.conn.request("GET", "/time")
