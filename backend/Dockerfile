@@ -14,4 +14,4 @@ EXPOSE 8000
 ENV NAME World
 
 # Run server.py when the container launches
-CMD ["python", "server.py"]
+CMD ["python3", "server.py"]
