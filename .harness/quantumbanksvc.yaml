@@ -1,5 +1,5 @@
 service:
-  name: quantumbanksvc
+  name: quantum-bank-backend-svc
   identifier: quantumbanksvc
   serviceDefinition:
     type: Kubernetes
