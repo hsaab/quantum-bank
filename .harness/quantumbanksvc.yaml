@@ -1,0 +1,25 @@
+service:
+  name: quantumbanksvc
+  identifier: quantumbanksvc
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: quantumbankbackend
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: quantumbank
+                  gitFetchType: Branch
+                  paths:
+                    - .harness/hsaab-quantum-bank-backend-service.yaml
+                    - .harness/hsaab-quantum-bank-backend-deployment.yaml
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+  gitOpsEnabled: false
+  orgIdentifier: SE_Sandbox
+  projectIdentifier: devX_super_team
