@@ -17,7 +17,6 @@ def test_home_page(conn):
 def test_hello_page(conn):
     conn.request("GET", "/hello")
     response = conn.getresponse()
-    # comment
     assert response.status == 200
     assert "Hello, World!" in response.read().decode()
 
