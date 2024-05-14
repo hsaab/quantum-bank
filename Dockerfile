@@ -14,5 +14,5 @@ COPY . .
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Run server.py when the container launches
-CMD ["python3", "server.py"]
+# Run server.py
+RUN python3 server.py
