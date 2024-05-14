@@ -1,6 +1,11 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
-from datetime import datetime
+from api.hello import handle_hello
+from api.home import handle_home
+from api.time import handle_time
+from api.echo import handle_echo
+from api.about import handle_about
+from api.four_o_four import handle_404
 
 class MyHTTPRequestHandler(BaseHTTPRequestHandler):
 
@@ -9,59 +14,17 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         path = parsed_path.path
         query_params = parse_qs(parsed_path.query)
-        
+
         if path == "/":
-            self.handle_home()
+            handle_home(self)
         elif path == "/hello":
-            self.handle_hello()
+            handle_hello(self)
         elif path == "/time":
-            self.handle_time()
-        elif path == "/echo":
-            self.handle_echo(query_params)
+            handle_time(self)
         elif path == "/about":
-            self.handle_about()
+            handle_about(self)
         else:
-            self.handle_404()
-
-    def handle_home(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write(b"Welcome to the Home Page!")
-
-    def handle_hello(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write(b"Hello, World!")
-        print(self.path)
-
-    def handle_time(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.wfile.write(f"Current server time is: {current_time}".encode())
-
-    def handle_echo(self, query_params):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        message = query_params.get('msg', [''])[0]  # Default to empty string if not provided
-        print(message)
-        self.wfile.write(f"Echo: {message}".encode())
-
-    def handle_about(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write(b"This is a simple HTTP server.")
-
-    def handle_404(self):
-        self.send_response(404)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write(b"404 Not Found")
+            handle_404(self)
 
 def run(server_class=HTTPServer, handler_class=MyHTTPRequestHandler, port=8000):
     server_address = ('', port)
