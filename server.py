@@ -9,7 +9,7 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         path = parsed_path.path
         query_params = parse_qs(parsed_path.query)
-
+        # adding random comment
         if path == "/":
             self.handle_home()
         elif path == "/hello":
