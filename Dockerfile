@@ -5,17 +5,14 @@ FROM python:3.9-slim
 WORKDIR /usr/src/app
 
 # Copy the current directory contents into the container at /usr/src/app
-COPY ./backend .
+COPY . .
 
-COPY ./backend/requirements.txt .
+COPY ./requirements.txt .
 RUN pip3 install --requirement ./requirements.txt
 COPY . .
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
-
-# Define environment variable
-ENV NAME World
 
 # Run server.py when the container launches
 CMD ["python3", "server.py"]
