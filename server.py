@@ -3,7 +3,6 @@ from urllib.parse import urlparse, parse_qs
 from api.hello import handle_hello
 from api.home import handle_home
 from api.time import handle_time
-from api.echo import handle_echo
 from api.about import handle_about
 from api.four_o_four import handle_404
 
