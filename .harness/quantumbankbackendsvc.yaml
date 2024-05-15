@@ -16,8 +16,8 @@ service:
                   connectorRef: quantumbank
                   gitFetchType: Branch
                   paths:
-                    - hsaab-quantum-bank-backend-deployment.yaml
-                    - hsaab-quantum-bank-backend-service.yaml
+                    - .harness/hsaab-quantum-bank-backend-deployment.yaml
+                    - .harness/hsaab-quantum-bank-backend-service.yaml
                   branch: main
               skipResourceVersioning: false
               enableDeclarativeRollback: false
