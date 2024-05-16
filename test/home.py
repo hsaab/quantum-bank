@@ -12,4 +12,4 @@ def test_home_status_code(client):
 
 def test_home_template(client):
     response = client.get('/')
-    assert b"This is Massively" in response.data
+    assert b"This is HARNESS" in response.data
