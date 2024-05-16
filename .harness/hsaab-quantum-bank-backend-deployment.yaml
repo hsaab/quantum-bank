@@ -20,7 +20,8 @@ spec:
     spec:
       containers:
       - name: quantum-bank-backend
-        image: hsaab/quantum-bank-backend:latest
+        image: hsaab/quantum-bank-backend
+        imagePullPolicy: "Always"
         resources:
           requests:
             cpu: "500m"
