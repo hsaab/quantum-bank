@@ -8,8 +8,8 @@ COPY ./requirements.txt .
 RUN pip3 install --requirement ./requirements.txt
 COPY . .
 
-# Make port 8000 available to the world outside this container
-EXPOSE 8000
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
 
 # Run server.py when the container launches
-CMD ["python3", "server.py"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]d
