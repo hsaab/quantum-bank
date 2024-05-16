@@ -1,35 +1,31 @@
-from http.server import HTTPServer, BaseHTTPRequestHandler
-from urllib.parse import urlparse, parse_qs
+from flask import Flask
 from api.hello import handle_hello
 from api.home import handle_home
 from api.time import handle_time
 from api.about import handle_about
 from api.four_o_four import handle_404
 
-class MyHTTPRequestHandler(BaseHTTPRequestHandler):
+app = Flask(__name__)
 
-    def do_GET(self):
-        # Parse the URL and query parameters
-        parsed_path = urlparse(self.path)
-        path = parsed_path.path
-        query_params = parse_qs(parsed_path.query)
+@app.route('/')
+def home():
+    return handle_home()
 
-        if path == "/":
-            handle_home(self)
-        elif path == "/hello":
-            handle_hello(self)
-        elif path == "/time":
-            handle_time(self)
-        elif path == "/about":
-            handle_about(self)
-        else:
-            handle_404(self)
+@app.route('/hello')
+def hello():
+    return handle_hello()
 
-def run(server_class=HTTPServer, handler_class=MyHTTPRequestHandler, port=8000):
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    print(f"Starting httpd server on port {port}...")
-    httpd.serve_forever()
+@app.route('/time')
+def time():
+    return handle_time()
+
+@app.route('/about')
+def about():
+    return handle_about()
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return handle_404()
 
 if __name__ == '__main__':
-    run()
+    app.run(port=8000)

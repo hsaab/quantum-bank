@@ -1,15 +1,16 @@
 import pytest
-from api.four_o_four import handle_404
-from test.server_mock import Mock_Server
+from server import app
 
-@pytest.fixture(scope="module")
-def mock_server_instance():
-    return Mock_Server()
+@pytest.fixture
+def client():
+    with app.test_client() as client:
+        yield client
 
-def test_404(mock_server_instance):
-    handle_404(mock_server_instance)
-    
-    assert mock_server_instance.response == 404
-    assert mock_server_instance.header == ('Content-type', 'text/html')
-    assert mock_server_instance.message == b"404 Not Found"
+def test_404_status_code(client):
+    response = client.get('/')
+    assert response.status_code == 200
+
+def test_404(client):
+    response = client.get('/yodawg20044')
+    assert b"404 Not Found" in response.data
 

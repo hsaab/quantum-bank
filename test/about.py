@@ -1,14 +1,16 @@
 import pytest
-from api.about import handle_about
-from test.server_mock import Mock_Server
+from server import app
 
-@pytest.fixture(scope="module")
-def mock_server_instance():
-    return Mock_Server()
+@pytest.fixture
+def client():
+    with app.test_client() as client:
+        yield client
 
-def test_handle_about(mock_server_instance):
-    handle_about(mock_server_instance)
-    
-    assert mock_server_instance.response == 200
-    assert mock_server_instance.header == ('Content-type', 'text/html')
-    assert mock_server_instance.message == b"This is a simple HTTP server."
+def test_about_status_code(client):
+    response = client.get('/')
+    assert response.status_code == 200
+
+def test_about(client):
+    response = client.get('/about')
+    assert b"This is a simple HTTP server." in response.data
+

@@ -1,5 +1,5 @@
-def handle_home(self):
-    self.send_response(200)
-    self.send_header('Content-type', 'text/html')
-    self.end_headers()
-    self.wfile.write(b"Welcome to the Home Page!")
+from flask import render_template 
+
+def handle_home():
+    return render_template('home.html')
+    # return "Welcome to the Home Page!"
