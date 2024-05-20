@@ -1,38 +1,47 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Massively by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}" />
-		<noscript><link rel="stylesheet" href="/static/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Landing Page</title>
+    <link rel="stylesheet" href="./static/css/simple.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-				<img src="images/harness-logo.png" alt="" />
-				<!-- Intro -->
-					<div id="intro">
-						<a href="#" class="image"><img src="static/images/harness-logo.png" alt="" /></a>
-						<h1>Harness<br />
-						rocks</h1>
-						<p>Accelerate innovation through devops modernization, improve developer experience,<br />
-							secure software delivery and optimize cloud cost.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-			</div>
+    <main>
+        <section class="hero">
+            <img class="logo" src="./static/images/sp_global_logo.png"/>
+            <p>We are revolutionizing technology with innovative solutions, driving customer excellence, and transforming challenges into opportunities for a better future.</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </section>
 
-		<!-- Scripts -->
-			<script src="/static/js/jquery.min.js"></script>
-			<script src="/static/js/jquery.scrollex.min.js"></script>
-			<script src="/static/js/jquery.scrolly.min.js"></script>
-			<script src="/static/js/browser.min.js"></script>
-			<script src="/static/js/breakpoints.min.js"></script>
-			<script src="/static/js/util.js"></script>
-			<script src="/static/js/main.js"></script>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Delivering cutting-edge technology solutions with a commitment to excellence..</p>
+        </section>
 
-	</body>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Delivering innovative solutions, expert advice, reliable services, and comprehensive support.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>How to get in touch with you.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024. All rights reserved.</p>
+    </footer>
+</body>
 </html>

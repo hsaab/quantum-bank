@@ -12,4 +12,4 @@ COPY . .
 EXPOSE 5000
 
 # Run server.py when the container launches
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]d
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
