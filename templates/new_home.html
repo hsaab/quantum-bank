@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harness Demo</title>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./static/webfonts/unicons.css">
+  <link rel="stylesheet" href="./static/css/plugins.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/grape.css">
+  <style>
+.swiper-container.nav-color .swiper-button, .swiper-container.nav-color .swiper-slide figure .item-link {
+    background: #605dbae6 !important;
+    color: #fff !important;
+}
+.swiper-container.nav-color .swiper-button:hover, .swiper-container.nav-color .swiper-slide figure .item-link:hover {
+    background: #605dba !important;
+}
+@media (max-width: 991.98px){
+      .navbar-expand-lg .navbar-collapse .dropdown-toggle:after {
+        color: #ffffff !important;
+      }
+  }
+  </style>
+</head>
+
+<body class="!bg-[#f0f0f8]">
+  <div class="grow shrink-0">
+    <header class="!absolute w-full">
+      <div class="gradient-5 text-white font-bold !text-[.75rem] mb-2 !relative" style="z-index: 1;">
+        <div class="container py-2 !text-center">
+          <p class="!mb-0">✨ Announcing amazing news that we've completely redesigned our <a href="#" class="!text-white hover inline-flex items-center">website <i class="uil uil-arrow-right text-[0.8rem] before:content-['\e94c']"></i></a></p>
+        </div>
+        <!-- /.container -->
+      </div>
+      <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+        <div class="container xl:flex-row lg:flex-row !flex-nowrap items-center">
+          <div class="navbar-brand w-full">
+            <a href="./index.html">
+              <img src="./static/images/sp_global_logo.png" class="nav-logo" alt="image">
+            </a>
+          </div>
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div class="offcanvas-header xl:hidden lg:hidden flex items-center justify-between flex-row p-6">
+              <h3 class="text-white xl:text-[1.5rem] !text-[calc(1.275rem_+_0.3vw)] !mb-0">Sandbox</h3>
+              <button type="button" class="btn-close btn-close-white mr-[-0.75rem] m-0 p-0 leading-none text-[#343f52] transition-all duration-[0.2s] ease-in-out border-0 motion-reduce:transition-none before:text-[1.05rem] before:content-['\ed3b'] before:w-[1.8rem] before:h-[1.8rem] before:leading-[1.8rem] before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:flex before:justify-center before:items-center before:m-0 before:p-0 before:rounded-[100%] hover:no-underline bg-inherit before:bg-[rgba(255,255,255,.08)] before:font-Unicons hover:before:bg-[rgba(0,0,0,.11)] focus:outline-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body xl:!ml-auto lg:!ml-auto flex  flex-col !h-full">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown dropdown-mega">
+                  <a class="nav-link dropdown-toggle  font-bold tracking-[-0.01rem] hover:!text-[#605dba] after:!text-[#605dba]" href="#" data-bs-toggle="dropdown">Demos</a>
+                  <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img"></ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle  font-bold tracking-[-0.01rem] hover:!text-[#605dba] after:!text-[#605dba]" href="#" data-bs-toggle="dropdown">Pages</a>
+                  <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img"></ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle  font-bold tracking-[-0.01rem] hover:!text-[#605dba] after:!text-[#605dba]" href="#" data-bs-toggle="dropdown">Projects</a>
+                  <div class="dropdown-menu mega-menu mega-menu-dark mega-menu-img"></div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle  font-bold tracking-[-0.01rem] hover:!text-[#605dba] after:!text-[#605dba]" href="#" data-bs-toggle="dropdown">Blog</a>
+                  <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img"></ul>
+                </li>
+                <li class="nav-item dropdown dropdown-mega">
+                  <a class="nav-link dropdown-toggle  font-bold tracking-[-0.01rem] hover:!text-[#605dba] after:!text-[#605dba]" href="#" data-bs-toggle="dropdown">Documentation</a>
+                  <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img"></ul>
+                </li>
+              </ul>
+              <!-- /.navbar-nav -->
+              <div class="offcanvas-footer xl:hidden lg:hidden">
+                <div>
+                  <a href="mailto:first.last@email.com" class="link-inverse">info@email.com</a>
+                  <br> 00 (123) 456 78 90 <br>
+                  <nav class="nav social social-white mt-4">
+                  <a class="text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"></i></a>
+                  <a class="text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-facebook-f before:content-['\eae2'] !text-white text-[1rem]"></i></a>
+                  <a class="text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-dribbble before:content-['\eaa2'] !text-white text-[1rem]"></i></a>
+                  <a class="text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-instagram before:content-['\eb9c'] !text-white text-[1rem]"></i></a>
+                  <a class="text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-youtube before:content-['\edb5'] !text-white text-[1rem]"></i></a>
+                  </nav>
+                  <!-- /.social -->
+                </div>
+              </div>
+              <!-- /.offcanvas-footer -->
+            </div>
+            <!-- /.offcanvas-body -->
+          </div>
+          <!-- /.navbar-collapse -->
+          <div class="navbar-other w-full !flex !ml-auto">
+            <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <li class="nav-item">
+                <nav class="nav social social-muted justify-end text-right">
+                  <a class="m-[0_0_0_.7rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-twitter before:content-['\ed59'] text-[1rem] text-[#5daed5]"></i></a>
+                  <a class="m-[0_0_0_.7rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-facebook-f before:content-['\eae2'] text-[1rem] text-[#4470cf]"></i></a>
+                  <a class="m-[0_0_0_.7rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-dribbble before:content-['\eaa2'] text-[1rem] text-[#e94d88]"></i></a>
+                  <a class="m-[0_0_0_.7rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-instagram before:content-['\eb9c'] text-[1rem] text-[#d53581]"></i></a>
+                </nav>
+                <!-- /.social -->
+              </li>
+              <li class="nav-item xl:hidden lg:hidden">
+                <button class="hamburger offcanvas-nav-btn"><span></span></button>
+              </li>
+            </ul>
+            <!-- /.navbar-nav -->
+          </div>
+          <!-- /.navbar-other -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+    <section class="wrapper overflow-hidden">
+      <div class="container pt-36 xl:pt-[12.5rem] lg:pt-[12.5rem] md:pt-[12.5rem] !text-center !relative">
+        <div class="absolute" style="top: -15%; left: 50%; transform: translateX(-50%);" data-cue="fadeIn"><img class="!rounded-[0.8rem]" src="./static/images/blurry.png" alt="image"></div>
+        <div class="flex flex-wrap mx-[-15px] !relative">
+          <div class="lg:w-8/12 xl:w-8/12 xxl:w-7/12 w-full flex-[0_0_auto] px-[15px] max-w-full !mx-auto !relative">
+            <div class="absolute shape grape w-5 hidden xl:block lg:block" style="top: -5%; left: -15%;" data-cue="fadeIn" data-delay="1500"><img src="./static/images/svg/doodle8.svg" class="svg-inject icon-svg !w-full !h-full" alt="image"></div>
+            <div class="absolute shape violet w-5 hidden xl:block lg:block" style="bottom: 30%; left: -20%;" data-cue="fadeIn" data-delay="1500"><img src="./static/images/svg/doodle3.svg" class="svg-inject icon-svg !w-full !h-full" alt="image"></div>
+            <div class="absolute shape fuchsia w-6 hidden xl:block lg:block" style="top: 0%; right: -25%; transform: rotate(70deg);" data-cue="fadeIn" data-delay="1500"><img src="./static/images/svg/doodle3.svg" class="svg-inject icon-svg !w-full !h-full" alt="image"></div>
+            <div class="absolute shape yellow w-6 hidden xl:block lg:block" style="bottom: 25%; right: -17%;" data-cue="fadeIn" data-delay="1500"><img src="./static/images/svg/doodle5.svg" class="svg-inject icon-svg !w-full !h-full" alt="image"></div>
+            <div data-cues="slideInDown" data-group="page-title">
+              <h1 class="xl:text-[3.2rem] text-[calc(1.445rem_+_2.34vw)] font-semibold !leading-[1.15] mb-5 md:mx-10 lg:mx-0 xl:mx-0">Delivering cutting-edge solutions with <br><span class="rotator-fade text-[#605dba] ">excellence.,accountability.,results.</span></h1>
+              <p class="lead !text-[1.2rem] !leading-[1.6] !mb-8">We provide innovative solutions, expert consulting, cloud services, and comprehensive security.</p>
+            </div>
+            <div class="flex justify-center" data-cues="slideInDown" data-delay="600">
+              <span><a class="btn btn-lg btn-grape text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:border-[#605dba] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] !rounded-[0.8rem] mx-1">See Projects</a></span>
+              <span><a class="btn btn-lg text-white bg-[#dadce0] border-[#e668b3] hover:text-white hover:bg-[#e668b3] hover:border-[#e668b3] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#e668b3] active:border-[#e668b3] disabled:text-white disabled:bg-[#e668b3] disabled:border-[#e668b3] !rounded-[0.8rem] mx-1">Contact Us</a></span>
+            </div>
+            <!-- /div -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+  <footer class="wrapper bg-repeat bg-fixed bg-image section-frame xl:mx-6 xl:rounded-[1rem] lg:mx-6 lg:rounded-[1rem] md:mx-6 md:rounded-[1rem] xs:pt-[8rem] sm:pt-40 md:pt-40 lg:pt-20 xl:pt-20">
+    <div class="container pb-16 xl:pb-20 lg:pb-20 md:pb-20">
+      <div class="card image-wrapper bg-full bg-image bg-overlay xl:mx-5 lg:mx-5 md:mx-5 !rounded-[0.8rem] overflow-hidden [background-size:100%] bg-[center_center] bg-no-repeat bg-scroll relative z-0 before:content-[''] before:block before:absolute before:z-[1] before:w-full before:h-full before:rounded-[0.4rem] before:left-0 before:top-0 before:bg-[rgba(30,34,40,.5)] -translate-y-2/4" data-image-src="./assets/img/photos/bg27.jpg">        
+        <!--/.card-body -->
+      </div>
+      <!--/.card -->
+      <div class="text-[#cacaca] xl:mx-5 lg:mx-5 md:mx-5 mt-[-5rem] xl:!mt-0 lg:!mt-0">
+        <div class="flex flex-wrap mx-[-15px] mt-[-30px] xl:mt-0 lg:mt-0">
+          <div class="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] px-[15px] max-w-full">
+            <div class="widget">
+              <h3 class="h2 !mb-3 !leading-[1.35]">Join the Community</h3>
+              <p class="!mb-5">Let's make something great together. We are trusted by over 1000+ clients. Join them by using our services and grow your business.</p>
+              <p class="!mb-1">© 2024 Sandbox. All rights reserved.</p>
+              <nav class="nav social">
+                <a class="m-[0_.7rem_0_0] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-twitter before:content-['\ed59'] text-[1rem] text-[#5daed5]"></i></a>
+                <a class="m-[0_.7rem_0_0] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-facebook-f before:content-['\eae2'] text-[1rem] text-[#4470cf]"></i></a>
+                <a class="m-[0_.7rem_0_0] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-dribbble before:content-['\eaa2'] text-[1rem] text-[#e94d88]"></i></a>
+                <a class="m-[0_.7rem_0_0] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-instagram before:content-['\eb9c'] text-[1rem] text-[#d53581]"></i></a>
+                <a class="m-[0_.7rem_0_0] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]" href="#"><i class="uil uil-youtube before:content-['\edb5'] text-[1rem] text-[#c8312b]"></i></a>
+              </nav>
+              <!-- /.social -->
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div class="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full flex-[0_0_auto] px-[15px] max-w-full lg:!ml-[16.66666667%] xl:!ml-[16.66666667%] mt-[30px] xl:mt-0 lg:mt-0">
+            <div class="widget">
+              <h4 class="widget-title !mb-3">Need Help?</h4>
+              <ul class="pl-0 list-none text-inherit  !mb-0">
+                <li><a class="text-inherit hover:text-[#605dba]" href="#">Support</a></li>
+                <li class="mt-[0.35rem]"><a class="text-inherit hover:text-[#605dba]" href="#">Get Started</a></li>
+                <li class="mt-[0.35rem]"><a class="text-inherit hover:text-[#605dba]" href="#">Terms of Use</a></li>
+                <li class="mt-[0.35rem]"><a class="text-inherit hover:text-[#605dba]" href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div class="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[30px] xl:mt-0 lg:mt-0">
+            <div class="widget">
+              <h4 class="widget-title !mb-3">Learn More</h4>
+              <ul class="pl-0 list-none text-inherit  !mb-0">
+                <li><a class="text-inherit hover:text-[#605dba]" href="#">About Us</a></li>
+                <li class="mt-[0.35rem]"><a class="text-inherit hover:text-[#605dba]" href="#">Our Story</a></li>
+                <li class="mt-[0.35rem]"><a class="text-inherit hover:text-[#605dba]" href="#">Projects</a></li>
+                <li class="mt-[0.35rem]"><a class="text-inherit hover:text-[#605dba]" href="#">Pricing</a></li>
+                <li class="mt-[0.35rem]"><a class="text-inherit hover:text-[#605dba]" href="#">Features</a></li>
+              </ul>
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div class="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[30px] xl:mt-0 lg:mt-0">
+            <div class="widget">
+              <h4 class="widget-title !mb-[.75rem] !text-[.95rem] !leading-[1.45]">Get in Touch</h4>
+              <address class=" not-italic leading-[inherit] mb-4">Moonshine St. 14/05 Light City, London, United Kingdom</address>
+              <a href="mailto:first.last@email.com" class="hover:text-[#343f52]">info@email.com</a><br> 00 (123) 456 78 90
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!--/.row -->
+      </div>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <div class="xl:pb-6 lg:pb-6 md:pb-6"></div>
+  <!-- progress wrapper -->
+  <div class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] opacity-0 invisible translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:text-[#605dba] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path class="fill-none stroke-[#605dba] stroke-[4] box-border transition-all duration-[0.2s] ease-linear motion-reduce:transition-none" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  <script src="./static/js/plugins.js"></script>
+  <script src="./static/js/theme.js"></script>
+</body>
+
+</html>
