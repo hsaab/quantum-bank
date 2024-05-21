@@ -33612,6 +33612,10 @@ blockquote.video-wrapper .video-content.icon-top:before {
     margin-top: 80px;
   }
 
+  .xl\:pt-20 {
+    margin-top: 3rem;
+  }
+
   .xl\:block {
     display: block;
   }
