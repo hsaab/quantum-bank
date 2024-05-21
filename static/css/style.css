@@ -30587,7 +30587,21 @@ blockquote.video-wrapper .video-content.icon-top:before {
   }
 }
 
+@media (min-width: 0px) and (max-width: 576px) {
+  .xs\:pt-\[8rem\] {
+    padding-top: 8rem;
+  }
+
+  .nav-logo {
+    width: 7rem;
+  }
+}
+
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .nav-logo {
+    width: 8rem;
+  }
+
   .sm\:\!static {
     position: static !important;
   }
@@ -30648,6 +30662,10 @@ blockquote.video-wrapper .video-content.icon-top:before {
 
   .sm\:mt-\[80px\] {
     margin-top: 80px;
+  }
+
+  .sm\:pt-40 {
+    padding-top: 10rem;
   }
 
   .sm\:\!hidden {
@@ -30750,6 +30768,10 @@ blockquote.video-wrapper .video-content.icon-top:before {
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .nav-logo {
+    width: 10rem;
+  }
+
   .md\:\!static {
     position: static !important;
   }
@@ -31699,6 +31721,10 @@ blockquote.video-wrapper .video-content.icon-top:before {
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .nav-logo {
+    width: 9rem;
+  }
+
   .lg\:\!absolute {
     position: absolute !important;
   }
@@ -33041,6 +33067,10 @@ blockquote.video-wrapper .video-content.icon-top:before {
 }
 
 @media (min-width: 1200px) {
+  .nav-logo {
+    width: 12rem;
+  }
+
   .xl\:\!absolute {
     position: absolute !important;
   }
@@ -33580,6 +33610,10 @@ blockquote.video-wrapper .video-content.icon-top:before {
 
   .xl\:mt-\[80px\] {
     margin-top: 80px;
+  }
+
+  .xl\:pt-20 {
+    margin-top: 3rem;
   }
 
   .xl\:block {
