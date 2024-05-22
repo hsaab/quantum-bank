@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hsaab-quantum-bank-backend-deployment-service
+  namespace: hsaab
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+  selector:
+    app: hsaab-quantum-bank-backend-deployment
