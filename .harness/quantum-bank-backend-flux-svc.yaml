@@ -1,0 +1,9 @@
+service:
+  name: quantum-bank-backend-flux-svc
+  identifier: quantumbankbackendfluxsvc
+  serviceDefinition:
+    type: Kubernetes
+    spec: {}
+  gitOpsEnabled: true
+  orgIdentifier: SE_Sandbox
+  projectIdentifier: fluxcddemo
