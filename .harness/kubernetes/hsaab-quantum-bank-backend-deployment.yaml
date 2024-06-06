@@ -20,8 +20,7 @@ spec:
     spec:
       containers:
       - name: quantum-bank-backend
-        # 140 for old, latest sequence for new
-        image: hsaab/quantum-bank-backend:140
+        image: hsaab/quantum-bank-backend:<+pipeline.sequenceId>
         imagePullPolicy: "Always"
         resources:
           requests:
