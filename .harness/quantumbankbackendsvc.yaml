@@ -19,6 +19,8 @@ service:
                     - .harness/kubernetes/hsaab-quantum-bank-backend-deployment.yaml
                     - .harness/kubernetes/hsaab-quantum-bank-backend-service.yaml
                   branch: main
+              valuesPaths:
+                - .harness/kubernetes/hsaab-values.yaml
               skipResourceVersioning: false
               enableDeclarativeRollback: false
     type: Kubernetes
