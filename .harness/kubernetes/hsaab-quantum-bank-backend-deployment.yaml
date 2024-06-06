@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: quantum-bank-backend
-        image: hsaab/quantum-bank-backend:<+pipeline.sequenceId>
+        image: hsaab/quantum-bank-backend:<+pipeline.sequenceId.toString()>
         imagePullPolicy: "Always"
         resources:
           requests:
