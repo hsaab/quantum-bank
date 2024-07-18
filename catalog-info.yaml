@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: quantum-bank
+  annotations:
+    github.com/project-slug: hsaab/quantum-bank
+spec:
+  type: other
+  lifecycle: unknown
+  owner: harness_account_all_users
