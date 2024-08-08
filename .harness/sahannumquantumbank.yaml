@@ -39,7 +39,7 @@ pipeline:
                     tags:
                       - latest
                     caching: true
-                    dockerfile: ./backend/Dockerfile
+                    dockerfile: ./Dockerfile
               - step:
                   type: Snyk
                   name: Snyk_1 - SAST
