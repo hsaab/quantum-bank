@@ -26,7 +26,7 @@ pipeline:
             os: Linux
             arch: Amd64
           runtime:
-            type: Cloud
+            type: Docker
             spec: {}
           execution:
             steps:
@@ -72,7 +72,7 @@ pipeline:
                     image: sahannumharness/quantum-bank-backend
                     language: Python
                     buildTool: Pytest
-                    args: .
+                    args: test/
                     runOnlySelectedTests: true
                     preCommand: python3 app.py &
                     enableTestSplitting: false
