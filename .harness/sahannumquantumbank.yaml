@@ -63,3 +63,9 @@ pipeline:
                     sbom:
                       format: spdx-json
                   description: static code analysis; see https://developer.harness.io/docs/security-testing-orchestration/sto-techref-category/snyk/snyk-scans/
+              - step:
+                  name: pytest time
+                  identifier: pytest_time
+                  template:
+                    templateRef: sahannum_quantum_lab_pytest_step
+                    versionLabel: "1"
