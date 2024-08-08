@@ -35,7 +35,7 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: sahannumdocker_connector
-                    repo: quantum-bank-backend
+                    repo: sahannumharness/quantum-bank-backend
                     tags:
                       - latest
                     caching: true
