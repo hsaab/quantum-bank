@@ -63,9 +63,3 @@ pipeline:
                     sbom:
                       format: spdx-json
                   description: static code analysis; see https://developer.harness.io/docs/security-testing-orchestration/sto-techref-category/snyk/snyk-scans/
-              - step:
-                  name: RunTests_1
-                  identifier: RunTests_1
-                  template:
-                    templateRef: sahannum_quantum_lab_pytest_step
-                    versionLabel: "1"
