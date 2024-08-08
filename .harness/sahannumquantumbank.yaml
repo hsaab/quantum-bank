@@ -55,7 +55,7 @@ pipeline:
                         level: info
                     image:
                       type: local_image
-                      name: quantum-bank-backend
+                      name: sahannumharness/quantum-bank-backend
                       tag: latest
                     auth:
                       access_token: <+secrets.getValue("jc-snyk-token")>
