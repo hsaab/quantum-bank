@@ -43,7 +43,7 @@ pipeline:
                       log:
                         level: info
                     auth:
-                      access_token: <+secrets.getValue("snyk_api_token")>
+                      access_token: <+secrets.getValue("jc-snyk-token")>
                     sbom:
                       format: spdx-json
                   description: static code analysis; see https://developer.harness.io/docs/security-testing-orchestration/sto-techref-category/snyk/snyk-scans/
