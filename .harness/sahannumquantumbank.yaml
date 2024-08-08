@@ -64,15 +64,8 @@ pipeline:
                       format: spdx-json
                   description: static code analysis; see https://developer.harness.io/docs/security-testing-orchestration/sto-techref-category/snyk/snyk-scans/
               - step:
-                  type: RunTests
                   name: RunTests_1
                   identifier: RunTests_1
-                  spec:
-                    connectorRef: sahannumdocker_connector
-                    image: sahannumharness/quantum-bank-backend
-                    language: Python
-                    buildTool: Pytest
-                    args: test/
-                    runOnlySelectedTests: true
-                    preCommand: python3 app.py &
-                    enableTestSplitting: false
+                  template:
+                    templateRef: sahannum_quantum_lab_pytest_step
+                    versionLabel: "1"
