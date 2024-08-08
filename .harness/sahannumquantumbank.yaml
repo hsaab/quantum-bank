@@ -20,7 +20,7 @@ pipeline:
         spec:
           cloneCodebase: true
           caching:
-            enabled: false
+            enabled: true
             paths: []
           platform:
             os: Linux
@@ -39,7 +39,7 @@ pipeline:
                     repo: sahannumharness/quantum-bank-backend
                     tags:
                       - latest
-                    caching: true
+                    caching: false
                     dockerfile: ./Dockerfile
               - step:
                   type: Snyk
