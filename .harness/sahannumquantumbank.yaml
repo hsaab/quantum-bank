@@ -72,7 +72,7 @@ pipeline:
                     image: sahannumharness/quantum-bank-backend
                     language: Python
                     buildTool: Pytest
-                    args: server_test.py
+                    args: .
                     runOnlySelectedTests: true
                     preCommand: python3 server.py &
                     enableTestSplitting: false
