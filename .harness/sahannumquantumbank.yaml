@@ -69,7 +69,7 @@ pipeline:
                   identifier: RunTests_1
                   spec:
                     connectorRef: sahannumdocker_connector
-                    image: ${sahannumharness}/quantum-bank-backend
+                    image: sahannumharness/quantum-bank-backend
                     language: Python
                     buildTool: Pytest
                     args: server_test.py
