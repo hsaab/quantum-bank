@@ -30,24 +30,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: Snyk
-                  name: Snyk_1 - SAST
-                  identifier: Snyk_1_SAST
-                  spec:
-                    mode: orchestration
-                    config: default
-                    target:
-                      type: repository
-                      detection: auto
-                    advanced:
-                      log:
-                        level: info
-                    auth:
-                      access_token: <+secrets.getValue("jc-snyk-token")>
-                    sbom:
-                      format: spdx-json
-                  description: static code analysis; see https://developer.harness.io/docs/security-testing-orchestration/sto-techref-category/snyk/snyk-scans/
-              - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
@@ -58,6 +40,28 @@ pipeline:
                       - latest
                     caching: true
                     dockerfile: ./backend/Dockerfile
+              - step:
+                  type: Snyk
+                  name: Snyk_1 - SAST
+                  identifier: Snyk_1_SAST
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: container
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
+                    image:
+                      type: local_image
+                      name: quantum-bank-backend
+                      tag: latest
+                    auth:
+                      access_token: <+secrets.getValue("jc-snyk-token")>
+                    sbom:
+                      format: spdx-json
+                  description: static code analysis; see https://developer.harness.io/docs/security-testing-orchestration/sto-techref-category/snyk/snyk-scans/
               - step:
                   type: RunTests
                   name: RunTests_1
