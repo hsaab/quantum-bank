@@ -74,7 +74,5 @@ pipeline:
                     buildTool: Pytest
                     args: server_test.py
                     runOnlySelectedTests: true
-                    preCommand: |-
-                      cd backend
-                      python3 server.py &
+                    preCommand: python3 server.py &
                     enableTestSplitting: false
