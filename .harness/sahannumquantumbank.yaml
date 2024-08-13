@@ -181,17 +181,6 @@ pipeline:
         failureStrategies:
           - onFailure:
               errors:
-                - Authentication
-                - Authorization
-                - Connectivity
-                - DelegateProvisioning
-                - Timeout
-                - Unknown
-                - Verification
-                - PolicyEvaluationFailure
-                - InputTimeoutError
-                - ApprovalRejection
-                - DelegateRestart
-                - UserMarkedFailure
+                - AllErrors
               action:
                 type: StageRollback
