@@ -77,3 +77,23 @@ pipeline:
                         runOnlySelectedTests: true
                         preCommand: python3 app.py &
                         enableTestSplitting: false
+                  - step:
+                      type: AquaTrivy
+                      name: AquaTrivy_1
+                      identifier: AquaTrivy_1
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          type: container
+                          detection: auto
+                        advanced:
+                          log:
+                            level: info
+                        privileged: true
+                        image:
+                          type: docker_v2
+                          name: sahannumharness/quantum-bank-backend
+                          tag: latest
+                        sbom:
+                          format: spdx-json
