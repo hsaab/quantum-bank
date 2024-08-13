@@ -41,38 +41,39 @@ pipeline:
                       - latest
                     caching: false
                     dockerfile: ./Dockerfile
-              - step:
-                  type: Snyk
-                  name: Snyk_1 - SAST
-                  identifier: Snyk_1_SAST
-                  spec:
-                    mode: orchestration
-                    config: default
-                    target:
-                      type: container
-                      detection: auto
-                    advanced:
-                      log:
-                        level: info
-                    image:
-                      type: local_image
-                      name: sahannumharness/quantum-bank-backend
-                      tag: latest
-                    auth:
-                      access_token: <+secrets.getValue("jc-snyk-token")>
-                    sbom:
-                      format: spdx-json
-                  description: static code analysis; see https://developer.harness.io/docs/security-testing-orchestration/sto-techref-category/snyk/snyk-scans/
-              - step:
-                  type: RunTests
-                  name: RunTests_1
-                  identifier: RunTests_1
-                  spec:
-                    connectorRef: sahannumdocker_connector
-                    image: sahannumharness/quantum-bank-backend
-                    language: Python
-                    buildTool: Pytest
-                    args: ./test/*.py --junitxml=out_report.xml
-                    runOnlySelectedTests: true
-                    preCommand: python3 app.py &
-                    enableTestSplitting: false
+              - parallel:
+                  - step:
+                      type: Snyk
+                      name: Snyk_1 - SAST
+                      identifier: Snyk_1_SAST
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          type: container
+                          detection: auto
+                        advanced:
+                          log:
+                            level: info
+                        image:
+                          type: local_image
+                          name: sahannumharness/quantum-bank-backend
+                          tag: latest
+                        auth:
+                          access_token: <+secrets.getValue("jc-snyk-token")>
+                        sbom:
+                          format: spdx-json
+                      description: static code analysis; see https://developer.harness.io/docs/security-testing-orchestration/sto-techref-category/snyk/snyk-scans/
+                  - step:
+                      type: RunTests
+                      name: RunTests_1
+                      identifier: RunTests_1
+                      spec:
+                        connectorRef: sahannumdocker_connector
+                        image: sahannumharness/quantum-bank-backend
+                        language: Python
+                        buildTool: Pytest
+                        args: ./test/*.py --junitxml=out_report.xml
+                        runOnlySelectedTests: true
+                        preCommand: python3 app.py &
+                        enableTestSplitting: false
