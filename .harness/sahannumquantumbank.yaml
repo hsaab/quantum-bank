@@ -151,3 +151,47 @@ pipeline:
                     isAutoRejectEnabled: false
                     approverInputs: []
         tags: {}
+    - stage:
+        name: deploy
+        identifier: deploy
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Kubernetes
+          service:
+            serviceRef: stevehquantumbankbackend
+          environment:
+            environmentRef: sahannumdevenv
+            gitBranch: steve-does-quantum-lab-s1
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: stevehquantuminfra
+          execution:
+            steps:
+              - step:
+                  type: K8sRollingDeploy
+                  name: K8sRollingDeploy_1
+                  identifier: K8sRollingDeploy_1
+                  spec:
+                    skipDryRun: false
+                    pruningEnabled: false
+                  timeout: 10m
+            rollbackSteps: []
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - Authentication
+                - Authorization
+                - Connectivity
+                - DelegateProvisioning
+                - Timeout
+                - Unknown
+                - Verification
+                - PolicyEvaluationFailure
+                - InputTimeoutError
+                - ApprovalRejection
+                - DelegateRestart
+                - UserMarkedFailure
+              action:
+                type: StageRollback
