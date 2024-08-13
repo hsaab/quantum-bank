@@ -1,0 +1,1 @@
+image: sahannum/quantum-bank-backend:<+pipeline.sequenceId>

@@ -1,0 +1,46 @@
+First thing I did was I pulled the repo and perused it. I'm pretty familiar with Flask apps, I noted the Dockerfile, all pretty standard.
+
+Synk:
+    First time I ever heard of Snyk, this is sick.
+
+    Snyk execution requires an API key which I couldn't create, I used an existing one.
+
+    Synk execution for Python seems to fail because the `snyk` app wants the libraries installed where it's scanning, so I switched the order such that the container builds first and Synk targets the container. This works.
+
+Docker Build Step:
+    The instructions have a typo or set this as a trap, but `./backend/Dockerfile` is wrong, the Dockerfile is in root (where most Dockerfiles live) so I had to fix that.
+
+    Setting up 2FA was reflexive but apparently a mistake for linking my harness pipeline with my public dockerhub.
+
+    I found I can use my PAT or my literal account password for the credentials, which is weird that it's not mentioned; maybe it's a thing all Dockerhub folks know about, this was only my second time (first time was the Harness lab at home).
+
+    `failed to push push access denied insufficient_scope: authorization failed`
+        - The Docker Repository needs to be $username/repo_name and not /repo_name (i.e. it doesn't populate from the connector). A later step in this lab does reflect this, to be fair.
+
+    Upload to dockerhub worked ONCE and then with no changes it's now failing on caching? I fixed this by disabling Docker cache layering in that step, which is Not Great (TM). It works consistently now.
+        #11 [5/5] COPY . .
+        #11 ERROR: failed to copy: http: read on closed response body
+        ------
+        > [5/5] COPY . .:
+        ------
+        Dockerfile:9
+        --------------------
+        7 |     COPY ./requirements.txt .
+        8 |     RUN pip3 install --requirement ./requirements.txt
+        9 | >>> COPY . .
+        10 |     
+        11 |     # Make port 5000 available to the world outside this container
+        --------------------
+        ERROR: failed to solve: failed to compute cache key: failed to copy: http: read on closed response body
+        exit status 1
+        time=2024-08-08T18:00:21.058Z level=ERROR msg="step failed" error="exit status 1"
+
+Pytest:
+    Harness Error: 1 error occurred: * exit status 2
+    and buried in the logs:
+        sh: 1: cd: can't cd to backend
+    The instructios tell me to put `cd backend` into the pre-step but we ran into an issue earlier where `backend` was being injected into the Docker build step and I don't know where it came from. (Maybe I rotely put )
+
+    It tries to pass a file that doesn't exist to pytest, `server_test.py` ... typically pytest is given the argument `.` which targets the test/ and there is a test directory.
+
+    It asks that we exec `server.py` during the pre-step, which doesn't exist; the flask app lives in `app.py`.

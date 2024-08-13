@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hsaab-quantum-bank-backend-deployment
-  namespace: hsaab
+  name: sahannum-quantum-bank-backend-deployment
+  namespace: sahannum
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hsaab-quantum-bank-backend-deployment
+      app: sahannum-quantum-bank-backend-deployment
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       labels:
-        app: hsaab-quantum-bank-backend-deployment
+        app: sahannum-quantum-bank-backend-deployment
     spec:
       containers:
       - name: quantum-bank-backend
