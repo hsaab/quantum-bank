@@ -16,11 +16,11 @@ service:
                   connectorRef: quantumbank
                   gitFetchType: Branch
                   paths:
-                    - .harness/kubernetes/hsaab-quantum-bank-backend-deployment.yaml
-                    - .harness/kubernetes/hsaab-quantum-bank-backend-service.yaml
+                    - .harness/kubernetes/sahannum-quantum-bank-backend-deployment.yaml
+                    - .harness/kubernetes/sahannum-quantum-bank-backend-service.yaml
                   branch: main
               valuesPaths:
-                - .harness/kubernetes/hsaab-values.yaml
+                - .harness/kubernetes/sahannum-values.yaml
               skipResourceVersioning: false
               enableDeclarativeRollback: false
     type: Kubernetes
