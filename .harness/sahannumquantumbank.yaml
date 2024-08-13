@@ -147,7 +147,7 @@ pipeline:
                       minimumCount: 1
                       disallowPipelineExecutor: false
                       userGroups:
-                        - devxsuperteam
+                        - account._account_all_users
                     isAutoRejectEnabled: false
                     approverInputs: []
         tags: {}
