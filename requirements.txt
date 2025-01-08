@@ -4,7 +4,7 @@ exceptiongroup==1.2.1
 Flask==3.0.3
 iniconfig==2.0.0
 itsdangerous==2.2.0
-Jinja2==3.1.4
+Jinja2==3.1.5
 junit-xml==1.9
 MarkupSafe==2.1.5
 packaging==24.0
