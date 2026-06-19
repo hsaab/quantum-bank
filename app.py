@@ -190,10 +190,8 @@ def page_not_found(e):
 @app.route("/login", methods=["GET", "POST"])
 def login():
     start_time = t.time()
-    REQUEST_COUNT.labels("POST" if "POST" else "GET", "/login", 200).inc()
-    REQUEST_LATENCY.labels("POST" if "POST" else "GET", "/login").observe(
-        t.time() - start_time
-    )
+    REQUEST_COUNT.labels(request.method, "/login", 200).inc()
+    REQUEST_LATENCY.labels(request.method, "/login").observe(t.time() - start_time)
     return handle_login()
 
 
@@ -224,10 +222,8 @@ def account():
 @app.route("/transfer", methods=["GET", "POST"])
 def transfer():
     start_time = t.time()
-    REQUEST_COUNT.labels("POST" if "POST" else "GET", "/transfer", 200).inc()
-    REQUEST_LATENCY.labels("POST" if "POST" else "GET", "/transfer").observe(
-        t.time() - start_time
-    )
+    REQUEST_COUNT.labels(request.method, "/transfer", 200).inc()
+    REQUEST_LATENCY.labels(request.method, "/transfer").observe(t.time() - start_time)
     return handle_transfer()
 
 

@@ -29,9 +29,10 @@ def handle_api_account_detail(account_id):
     if "user_id" not in session:
         return jsonify({"error": "Not authenticated"}), 401
 
+    user_id = session["user_id"]
     account = get_account_by_id(account_id)
 
-    if not account:
+    if not account or str(account.get("user_id")) != str(user_id):
         return jsonify({"error": "Account not found"}), 404
 
     return jsonify({"account": account})

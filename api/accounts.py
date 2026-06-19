@@ -7,6 +7,7 @@ def handle_account_detail():
     if "user_id" not in session:
         return redirect(url_for("login"))
 
+    user_id = session["user_id"]
     account_id = request.args.get("id")
 
     if not account_id:
@@ -14,7 +15,7 @@ def handle_account_detail():
 
     account = get_account_by_id(account_id)
 
-    if not account:
+    if not account or str(account.get("user_id")) != str(user_id):
         return redirect(url_for("dashboard"))
 
     # Get transactions for this account

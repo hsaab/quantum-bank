@@ -21,6 +21,8 @@ def handle_home_content():
         # Select template based on treatment
         if treatment == "old_home":
             template = "old_home.html"
+        elif treatment == "dev_home":
+            template = "home_v3.html"
         elif treatment == "new_home":
             template = "home.html"
         else:

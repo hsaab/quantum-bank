@@ -36,6 +36,19 @@ def handle_transfer():
                 error="Cannot transfer to the same account",
             )
 
+        valid_source_ids = {str(acc["id"]) for acc in source_accounts}
+        valid_account_ids = {str(acc["id"]) for acc in accounts}
+        if (
+            from_account_id not in valid_source_ids
+            or to_account_id not in valid_account_ids
+        ):
+            return render_template(
+                "transfer.html",
+                accounts=source_accounts,
+                all_accounts=accounts,
+                error="Account not found",
+            )
+
         try:
             amount = float(amount)
             if amount <= 0:
@@ -78,7 +91,7 @@ def handle_api_transfer():
     if "user_id" not in session:
         return jsonify({"success": False, "message": "Not authenticated"}), 401
 
-    data = request.get_json()
+    data = request.get_json(silent=True) or {}
 
     from_account_id = data.get("from_account_id")
     to_account_id = data.get("to_account_id")
@@ -87,6 +100,26 @@ def handle_api_transfer():
 
     if not from_account_id or not to_account_id or not amount:
         return jsonify({"success": False, "message": "Missing required fields"}), 400
+
+    if str(from_account_id) == str(to_account_id):
+        return (
+            jsonify(
+                {"success": False, "message": "Cannot transfer to the same account"}
+            ),
+            400,
+        )
+
+    user_id = session["user_id"]
+    accounts = get_accounts_by_user(user_id)
+    source_account_ids = {
+        str(acc["id"]) for acc in accounts if acc["account_type"] != "credit"
+    }
+    account_ids = {str(acc["id"]) for acc in accounts}
+    if (
+        str(from_account_id) not in source_account_ids
+        or str(to_account_id) not in account_ids
+    ):
+        return jsonify({"success": False, "message": "Account not found"}), 400
 
     try:
         amount = float(amount)

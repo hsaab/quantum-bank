@@ -102,6 +102,33 @@ def test_home_content_json_shape(client):
 
 
 @pytest.mark.public
+def test_home_content_dev_home_uses_v3_template(client, monkeypatch):
+    class FakeSplitClient:
+        def get_treatment(self, user_key, flag_name):
+            return "dev_home"
+
+    monkeypatch.setattr("api.home_content.get_split_client", lambda: FakeSplitClient())
+
+    response = client.get("/api/home-content")
+
+    assert response.status_code == 200
+    body = response.get_json()
+    assert body["treatment"] == "dev_home"
+    assert body["template"] == "home_v3.html"
+
+
+@pytest.mark.public
+def test_banking_metrics_use_actual_request_method(client):
+    client.get("/login")
+    client.get("/transfer")
+
+    data = client.get("/metrics").get_data(as_text=True)
+
+    assert 'app_request_count{method="GET",endpoint="/login"' in data
+    assert 'app_request_count{method="GET",endpoint="/transfer"' in data
+
+
+@pytest.mark.public
 @pytest.mark.parametrize(
     "path",
     (
