@@ -14,7 +14,7 @@ COPY . .
 
 # Run the app as a non-root user.
 RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
-RUN chown -R appuser:appgroup /app
+RUN mkdir -p /data && chown -R appuser:appgroup /app /data
 USER appuser
 
 # Make port 10000 available (Render's default)

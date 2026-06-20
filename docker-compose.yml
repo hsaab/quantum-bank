@@ -9,11 +9,14 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - FLASK_DEBUG=0
+      - QUANTUM_BANK_DATABASE=/data/quantum_bank.db
     security_opt:
       - no-new-privileges:true
     read_only: true
     tmpfs:
       - /tmp
+    volumes:
+      - quantum-bank-data:/data
     depends_on:
       - prometheus
   prometheus:
@@ -27,3 +30,6 @@ services:
     read_only: true
     tmpfs:
       - /prometheus
+
+volumes:
+  quantum-bank-data:
