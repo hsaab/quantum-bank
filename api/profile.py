@@ -10,6 +10,7 @@ def handle_profile():
     profile = get_user_profile(session["user_id"])
 
     if profile is None:
+        session.clear()
         return redirect(url_for("login"))
 
     return render_template("profile.html", profile=profile)
