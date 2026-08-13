@@ -49,5 +49,6 @@ drafts/
 
 # Claude Code local/personal settings (machine-specific)
 .claude/settings.local.json
-.claude/settings.jsonSTEER.md
+.claude/settings.json
+STEER.md
 .STEER-*
