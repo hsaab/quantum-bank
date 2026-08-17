@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Bank</title>
+
+  <!-- Styles for new home -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./static/webfonts/unicons.css">
+  <link rel="stylesheet" href="./static/css/plugins.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/grape.css">
+
+  <!-- Styles for old home -->
+  <link rel="stylesheet" href="./static/css/simple.css">
+
+  <style>
+    /* Hide variants by default - only one shown at a time */
+    .home-variant {
+      display: none;
+    }
+    .home-variant.active {
+      display: block !important;
+    }
+
+    .swiper-container.nav-color .swiper-button, .swiper-container.nav-color .swiper-slide figure .item-link {
+        background: #605dbae6 !important;
+        color: #fff !important;
+    }
+    .swiper-container.nav-color .swiper-button:hover, .swiper-container.nav-color .swiper-slide figure .item-link:hover {
+        background: #605dba !important;
+    }
+    @media (max-width: 991.98px){
+          .navbar-expand-lg .navbar-collapse .dropdown-toggle:after {
+            color: #ffffff !important;
+          }
+      }
+
+    /* Demo Mode Indicator */
+    .demo-mode-badge {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #605dba 0%, #4f4ca8 100%);
+      color: #fff;
+      padding: 5px 11px;
+      border-radius: 14px;
+      font-size: 8px;
+      font-weight: 600;
+      z-index: 9999;
+      box-shadow: 0 3px 8px rgba(96, 93, 186, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Manrope', sans-serif;
+      letter-spacing: 0.3px;
+      animation: pulse 2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .demo-mode-badge::before {
+      content: '⚡';
+      font-size: 9px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.9;
+        transform: scale(1.02);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .demo-mode-badge {
+        bottom: 10px;
+        left: 10px;
+        padding: 4px 8px;
+        font-size: 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  {% if demo_mode == True %}
+  <div class="demo-mode-badge">DEMO MODE</div>
+  {% endif %}
+  <!-- New Home Variant (full page embedded) -->
+  <iframe id="new-home-variant" class="home-variant" src="/new-home-static" style="width:100%;height:100vh;border:none;" data-variant="new_home"></iframe>
+
+  <!-- Old Home Variant (full page embedded) -->
+  <iframe id="old-home-variant" class="home-variant" src="/old-home-static" style="width:100%;height:100vh;border:none;" data-variant="old_home"></iframe>
+
+  <!-- V3 Developer-Focused Variant (full page embedded) -->
+  <iframe id="v3-home-variant" class="home-variant" src="/v3-home-static" style="width:100%;height:100vh;border:none;" data-variant="dev_home"></iframe>
+
+  <!-- Split.io Client-Side SDK -->
+  <script src="https://cdn.split.io/sdk/split-11.0.1.min.js" integrity="sha384-zuHjwWMmcmD86VoJj0CJ3sp/+EJ9r6hlEHbjxC0CEpatleRiPEGeE6fLQgcV8PHl" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/split-client.js') }}" defer></script>
+</body>
+</html>

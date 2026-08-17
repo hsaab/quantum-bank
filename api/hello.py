@@ -1,3 +1,3 @@
 def handle_hello():
     # adding comment
-    return 'Hello, World!'
+    return "Hello, World!"

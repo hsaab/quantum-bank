@@ -22,6 +22,9 @@ spec:
       - name: quantum-bank-backend
         image: {{.Values.image}}  
         imagePullPolicy: "Always"
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
         resources:
           requests:
             cpu: "500m"

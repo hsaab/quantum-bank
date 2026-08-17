@@ -1,0 +1,38 @@
+<svg width="32" height="32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="quantumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b7ff4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <circle cx="85" cy="100" r="45" 
+          fill="none" 
+          stroke="url(#quantumGradient)" 
+          stroke-width="8" 
+          opacity="0.7" />
+  
+  <g opacity="0.7">
+    <rect x="123" y="52" width="8" height="90" 
+          fill="url(#quantumGradient)" 
+          rx="4"
+          transform="rotate(8 127 97)" />
+    <rect x="103" y="52" width="32" height="8" 
+          fill="url(#quantumGradient)" 
+          rx="4"
+          transform="rotate(8 119 56)" />
+    <rect x="103" y="134" width="32" height="8" 
+          fill="url(#quantumGradient)" 
+          rx="4"
+          transform="rotate(8 119 138)" />
+  </g>
+  
+  <ellipse cx="107" cy="100" rx="18" ry="45" 
+           fill="url(#quantumGradient)" 
+           opacity="0.3" />
+  
+  <circle cx="100" cy="80" r="2" fill="#c4b5fd" opacity="0.6" />
+  <circle cx="110" cy="100" r="2" fill="#c4b5fd" opacity="0.5" />
+  <circle cx="105" cy="120" r="2" fill="#c4b5fd" opacity="0.6" />
+</svg>

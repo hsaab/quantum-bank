@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ account.account_type|title }} Account - Quantum Bank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/banking.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/dashboard" class="navbar-brand">Quantum Bank</a>
+            <ul class="navbar-nav">
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="/transfer" class="nav-link">Transfer</a></li>
+                <li><a href="/transactions" class="nav-link">Transactions</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="/dashboard" style="color: #3b82f6; text-decoration: none;">&larr; Back to Dashboard</a>
+
+        <div style="margin-top: 2rem;">
+            <div class="account-card" style="cursor: default;">
+                <div class="account-type">{{ account.account_type|title }} Account</div>
+                <div class="account-balance">
+                    {% if account.account_type == 'credit' %}
+                        -${{ account.balance|abs|currency }}
+                    {% else %}
+                        ${{ account.balance|currency }}
+                    {% endif %}
+                </div>
+                <div class="account-number">{{ account.account_number }}</div>
+                <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">
+                    Status: {{ account.status|title }} • Currency: {{ account.currency }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards Section -->
+        {% if cards %}
+        <div class="card mt-4">
+            <div class="card-header">Linked Cards</div>
+            <div style="display: grid; gap: 1rem;">
+                {% for card in cards %}
+                <div style="padding: 1rem; background: #f9fafb; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">
+                            {{ card.card_type|title }} Card
+                        </div>
+                        <div style="font-size: 0.9rem; color: #6b7280;">
+                            **** **** **** {{ card.card_last4 }}
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 0.85rem; color: #6b7280;">Expires</div>
+                        <div style="font-weight: 500;">{{ card.expiry_date }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Transactions -->
+        <div class="card mt-4">
+            <div class="card-header">Transaction History</div>
+            {% if transactions %}
+            <ul class="transaction-list">
+                {% for trans in transactions %}
+                <li class="transaction-item">
+                    <div class="transaction-info">
+                        <div class="transaction-description">{{ trans.description }}</div>
+                        <div class="transaction-details">
+                            {{ trans.transaction_type|title }} • {{ trans.created_at|string|truncate(10, true, '', 0) }}
+                            {% if trans.recipient %}
+                            • {{ trans.recipient }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="transaction-amount {% if trans.amount > 0 %}positive{% else %}negative{% endif %}">
+                        {% if trans.amount > 0 %}+{% endif %}${{ trans.amount|abs|currency }}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p style="text-align: center; color: #6b7280; padding: 2rem;">No transactions yet</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

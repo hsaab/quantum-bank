@@ -25,3 +25,10 @@
 **/venv
 **/__pycache__
 .pytest_cache
+.env
+.git
+.gitignore
+*.md
+quantum_bank.db
+*.sqlite
+*.db

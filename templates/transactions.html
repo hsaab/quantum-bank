@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Transactions - Quantum Bank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/banking.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/dashboard" class="navbar-brand">Quantum Bank</a>
+            <ul class="navbar-nav">
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="/transfer" class="nav-link">Transfer</a></li>
+                <li><a href="/transactions" class="nav-link">Transactions</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">All Transactions</h1>
+
+        <div class="card">
+            <div class="card-header">Transaction History</div>
+            {% if transactions %}
+            <ul class="transaction-list">
+                {% for trans in transactions %}
+                <li class="transaction-item">
+                    <div class="transaction-info">
+                        <div class="transaction-description">{{ trans.description }}</div>
+                        <div class="transaction-details">
+                            {{ trans.account_type|title }} ({{ trans.account_number }}) •
+                            {{ trans.transaction_type|title }} •
+                            {{ trans.created_at|string|truncate(10, true, '', 0) }}
+                            {% if trans.recipient %}
+                            • {{ trans.recipient }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="transaction-amount {% if trans.amount > 0 %}positive{% else %}negative{% endif %}">
+                        {% if trans.amount > 0 %}+{% endif %}${{ trans.amount|abs|currency }}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p style="text-align: center; color: #6b7280; padding: 2rem;">No transactions found</p>
+            {% endif %}
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

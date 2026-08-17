@@ -1,0 +1,60 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- The "0" - left side, slightly transparent -->
+  <circle cx="85" cy="100" r="45" 
+          fill="none" 
+          stroke="#ffffff" 
+          stroke-width="8" 
+          opacity="0.7"
+          filter="url(#glow)" />
+  
+  <!-- The "1" - subtle tilt with matching serifs -->
+  <g opacity="0.7" filter="url(#glow)">
+    <rect x="123" y="52" width="8" height="90" 
+          fill="#ffffff" 
+          rx="4"
+          transform="rotate(8 127 97)" />
+    <rect x="103" y="52" width="32" height="8" 
+          fill="#ffffff" 
+          rx="4"
+          transform="rotate(8 119 56)" />
+    <rect x="103" y="134" width="32" height="8" 
+          fill="#ffffff" 
+          rx="4"
+          transform="rotate(8 119 138)" />
+  </g>
+  
+  <!-- Superposition overlap area -->
+  <ellipse cx="107" cy="100" rx="18" ry="45" 
+           fill="#ffffff" 
+           opacity="0.3"
+           filter="url(#strongGlow)" />
+  
+  <!-- Quantum particles -->
+  <circle cx="100" cy="80" r="2" fill="#ffffff" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="110" cy="100" r="2" fill="#ffffff" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="105" cy="120" r="2" fill="#ffffff" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3s" repeatCount="indefinite" />
+  </circle>
+</svg>

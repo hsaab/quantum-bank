@@ -1,0 +1,13 @@
+[run]
+source =
+    app
+    api
+    models
+    split_config
+branch = false
+
+[report]
+precision = 1
+show_missing = true
+omit =
+    */test/*

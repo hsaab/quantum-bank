@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Quantum Bank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #667eea;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-outline {
+      border: 2px solid #667eea;
+      color: #667eea;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #667eea;
+      color: #fff;
+    }
+
+    /* Hero */
+    .pricing-hero {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+
+    .pricing-hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff 0%, #667eea 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .pricing-hero p {
+      font-size: 20px;
+      color: #b8b8d1;
+      margin-bottom: 20px;
+    }
+
+    /* Pricing Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 0 80px;
+    }
+
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 30px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      border-color: #667eea;
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    }
+
+    .pricing-card.featured {
+      border-color: #667eea;
+      background: rgba(102, 126, 234, 0.1);
+    }
+
+    .pricing-card.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      padding: 5px 40px;
+      font-size: 12px;
+      font-weight: 700;
+      transform: rotate(45deg);
+      letter-spacing: 1px;
+    }
+
+    .tier-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .tier-price {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tier-price .currency {
+      font-size: 24px;
+    }
+
+    .tier-price .period {
+      font-size: 16px;
+      color: #b8b8d1;
+      font-weight: 500;
+    }
+
+    .tier-description {
+      color: #b8b8d1;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .features-list li {
+      padding: 12px 0;
+      color: #b8b8d1;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+
+    .features-list li::before {
+      content: '✓';
+      color: #50fa7b;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .features-list li.not-included {
+      opacity: 0.3;
+    }
+
+    .features-list li.not-included::before {
+      content: '×';
+      color: #ff5555;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: #7c7c9a;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-hero h1 {
+        font-size: 36px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body data-variant="dev_home" data-testid="pricing-variant-v3">
+  <header>
+    <nav class="container">
+      <a href="/" class="logo">⚛️ Quantum Bank</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/login" data-testid="nav-login">Login</a></li>
+      </ul>
+      <a href="/login" class="btn btn-primary">Get Started</a>
+    </nav>
+  </header>
+
+  <section class="pricing-hero">
+    <div class="container">
+      <h1>Simple, Transparent Pricing</h1>
+      <p>Start free. Scale as you grow. No hidden fees.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="pricing-grid">
+      <!-- Free Tier -->
+      <div class="pricing-card">
+        <h3 class="tier-name">Free</h3>
+        <div class="tier-price">
+          <span class="currency">$</span>0
+          <span class="period">/month</span>
+        </div>
+        <p class="tier-description">Perfect for personal projects and learning</p>
+
+        <ul class="features-list">
+          <li>1,000 API calls/month</li>
+          <li>2 bank accounts</li>
+          <li>Community support</li>
+          <li>Basic webhooks</li>
+          <li>REST API access</li>
+          <li class="not-included">CLI access</li>
+          <li class="not-included">MCP integration</li>
+          <li class="not-included">Priority support</li>
+        </ul>
+
+        <a href="/login" class="btn btn-outline" style="width: 100%;">Start Free</a>
+      </div>
+
+      <!-- Bronze Tier -->
+      <div class="pricing-card">
+        <h3 class="tier-name">Bronze</h3>
+        <div class="tier-price">
+          <span class="currency">$</span>10
+          <span class="period">/month</span>
+        </div>
+        <p class="tier-description">For small teams building real products</p>
+
+        <ul class="features-list">
+          <li>100,000 API calls/month</li>
+          <li>10 bank accounts</li>
+          <li>Email support</li>
+          <li>Real-time webhooks</li>
+          <li>CLI access</li>
+          <li>REST API access</li>
+          <li class="not-included">MCP integration</li>
+          <li class="not-included">Custom SDKs</li>
+        </ul>
+
+        <a href="/login" class="btn btn-outline" style="width: 100%;">Get Bronze</a>
+      </div>
+
+      <!-- Silver Tier (Featured) -->
+      <div class="pricing-card featured">
+        <h3 class="tier-name">Silver</h3>
+        <div class="tier-price">
+          <span class="currency">$</span>15
+          <span class="period">/month</span>
+        </div>
+        <p class="tier-description">For growing businesses with advanced needs</p>
+
+        <ul class="features-list">
+          <li>1M API calls/month</li>
+          <li>Unlimited accounts</li>
+          <li>Priority support</li>
+          <li>Advanced webhooks</li>
+          <li>CLI access</li>
+          <li>MCP integration</li>
+          <li>Custom SDKs</li>
+          <li>99.9% SLA</li>
+        </ul>
+
+        <a href="/login" class="btn btn-primary" style="width: 100%;">Get Silver</a>
+      </div>
+
+      <!-- Gold Tier -->
+      <div class="pricing-card">
+        <h3 class="tier-name">Gold</h3>
+        <div class="tier-price">
+          <span class="currency">$</span>25
+          <span class="period">/month</span>
+        </div>
+        <p class="tier-description">Enterprise-grade with premium support</p>
+
+        <ul class="features-list">
+          <li>Unlimited API calls</li>
+          <li>Unlimited accounts</li>
+          <li>Dedicated account manager</li>
+          <li>99.99% SLA</li>
+          <li>White-label options</li>
+          <li>Custom integrations</li>
+          <li>On-premise deployment</li>
+          <li>24/7 phone support</li>
+        </ul>
+
+        <a href="/login" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Quantum Bank. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

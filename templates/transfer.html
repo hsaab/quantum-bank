@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Money - Quantum Bank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/banking.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/dashboard" class="navbar-brand">Quantum Bank</a>
+            <ul class="navbar-nav">
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="/transfer" class="nav-link">Transfer</a></li>
+                <li><a href="/transactions" class="nav-link">Transactions</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">Transfer Money</h1>
+
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <div class="card-header">New Transfer</div>
+
+            {% if success %}
+            <div class="alert alert-success">
+                {{ success }}
+            </div>
+            {% endif %}
+
+            {% if error %}
+            <div class="alert alert-error">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form method="POST" action="/transfer">
+                <div class="form-group">
+                    <label class="form-label" for="from_account">From Account</label>
+                    <select id="from_account" name="from_account" class="form-control" required>
+                        <option value="">Select source account</option>
+                        {% for account in accounts %}
+                        <option value="{{ account.id }}">
+                            {{ account.account_type|title }} - {{ account.account_number }} (${{ account.balance|currency }})
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="to_account">To Account</label>
+                    <select id="to_account" name="to_account" class="form-control" required>
+                        <option value="">Select destination account</option>
+                        {% for account in all_accounts %}
+                        <option value="{{ account.id }}">
+                            {{ account.account_type|title }} - {{ account.account_number }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="amount">Amount</label>
+                    <input
+                        type="number"
+                        id="amount"
+                        name="amount"
+                        class="form-control"
+                        placeholder="0.00"
+                        step="0.01"
+                        min="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="description">Description (Optional)</label>
+                    <input
+                        type="text"
+                        id="description"
+                        name="description"
+                        class="form-control"
+                        placeholder="What's this transfer for?"
+                    >
+                </div>
+
+                <div class="form-group" style="display: flex; gap: 1rem;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">
+                        Transfer Money
+                    </button>
+                    <a href="/dashboard" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quantum Bank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/banking.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/dashboard" class="navbar-brand">Quantum Bank</a>
+            <ul class="navbar-nav">
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="/transfer" class="nav-link">Transfer</a></li>
+                <li><a href="/transactions" class="nav-link">Transactions</a></li>
+                <li class="nav-user">{{ full_name }}</li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">Welcome back, {{ full_name }}!</h1>
+
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="summary-label">Total Balance</div>
+                <div class="summary-value">${{ total_balance|currency }}</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-label">Active Accounts</div>
+                <div class="summary-value">{{ accounts|length }}</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-label">Recent Transactions</div>
+                <div class="summary-value">{{ recent_transactions|length }}</div>
+            </div>
+            {% if rewards_points is not none %}
+            <div class="summary-card">
+                <div class="summary-label">Rewards</div>
+                <div class="summary-value" data-testid="rewards-points">{{ rewards_points }}</div>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if rewards_banner_kind %}
+        <div data-testid="rewards-banner" data-kind="{{ rewards_banner_kind }}" style="margin: 1.25rem 0; padding: 0.9rem 1rem; background: #fef3c7; border-radius: 10px; border: 1px solid #f59e0b; color: #92400e;">
+            {% if rewards_banner_kind == "legacy_no_schema" %}
+            Rewards are temporarily unavailable — running in legacy mode.
+            {% elif rewards_banner_kind == "rollback_forced_fail" %}
+            Rewards schema rollout failed — points are paused. Existing balances are safe.
+            {% elif rewards_banner_kind == "rollback_runtime_error" %}
+            Rewards lookup hit an error — points are paused.
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <!-- Accounts -->
+        <h2 class="mb-3">Your Accounts</h2>
+        <div class="accounts-grid">
+            {% for account in accounts %}
+            <a href="/account?id={{ account.id }}" style="text-decoration: none;">
+                <div class="account-card">
+                    <div class="account-type">{{ account.account_type|title }} Account</div>
+                    <div class="account-balance">
+                        {% if account.account_type == 'credit' %}
+                            -${{ account.balance|abs|currency }}
+                        {% else %}
+                            ${{ account.balance|currency }}
+                        {% endif %}
+                    </div>
+                    <div class="account-number">{{ account.account_number }}</div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="card">
+            <div class="card-header">Recent Activity</div>
+            {% if recent_transactions %}
+            <ul class="transaction-list">
+                {% for trans in recent_transactions %}
+                <li class="transaction-item">
+                    <div class="transaction-info">
+                        <div class="transaction-description">{{ trans.description }}</div>
+                        <div class="transaction-details">
+                            {{ trans.account_type|title }} • {{ trans.created_at|string|truncate(10, true, '', 0) }}
+                            {% if trans.recipient %}
+                            • {{ trans.recipient }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="transaction-amount {% if trans.amount > 0 %}positive{% else %}negative{% endif %}">
+                        {% if trans.amount > 0 %}+{% endif %}${{ trans.amount|abs|currency }}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="/transactions" class="btn btn-secondary">View All Transactions</a>
+            </div>
+            {% else %}
+            <p style="text-align: center; color: #6b7280; padding: 2rem;">No recent transactions</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

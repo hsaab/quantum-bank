@@ -8,6 +8,12 @@ services:
       - 5000:5000
     environment:
       - PYTHONUNBUFFERED=1
+      - FLASK_DEBUG=0
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
     depends_on:
       - prometheus
   prometheus:
@@ -16,3 +22,8 @@ services:
       - 9090:9090
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /prometheus

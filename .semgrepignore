@@ -1,0 +1,8 @@
+# Vendored third-party libraries (not first-party code).
+static/js/plugins.js
+static/js/theme.js
+
+# Standalone dev build utility (no package.json, not in CI, not deployed). Reads a
+# hardcoded list of in-repo SVG filenames; no user input reaches fs.readFileSync.
+# CWE-22 path-traversal hit at line 36 is a false positive on static literals.
+static/images/logos/convert-to-png.js

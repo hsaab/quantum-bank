@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: quantum-bank
+    runtime: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: SPLIT_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DEMO_MODE
+        value: "off"

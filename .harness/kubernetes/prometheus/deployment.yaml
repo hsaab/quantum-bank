@@ -16,6 +16,9 @@ spec:
       containers:
         - name: prometheus
           image: prom/prometheus
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
           ports:
             - containerPort: 9090
           volumeMounts:

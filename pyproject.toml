@@ -1,0 +1,36 @@
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+include = '\.pyi?$'
+exclude = '''
+/(
+  \.git
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.venv
+  | venv
+  | build
+  | dist
+)/
+'''
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+exclude = [
+  ".git",
+  ".venv",
+  "venv",
+  ".mypy_cache",
+  ".pytest_cache",
+  "build",
+  "dist",
+  ".cursor",
+  ".claude",
+]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+# Avoid line-length churn; formatting is covered by `black --check`.
+ignore = ["E501"]
+

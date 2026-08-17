@@ -1,0 +1,1342 @@
+Speaker 2 | 00:00
+Actually, a harness of it you're on.
+Roderick Clemente | 00:00
+Actually, a harness I... You're right there.
+Aaron Newcombe | 00:03
+There he is. [Laughter].
+Speaker 2 | 00:06
+It was, I guess, in the fall, and the speaker joined literally getting out of a taxi.
+Roderick Clemente | 00:06
+It was, I guess, in the fall, and the speaker joined literally getting out of a taxi.
+Speaker 2 | 00:13
+My... I know the product was excellent, but it was a lot of fun to navigate in the moment.
+Roderick Clemente | 00:13
+I know the product was excellent, but it was a lot of fun to navigate in the moment, I bet.
+Aaron Newcombe | 00:19
+I bet.
+Roderick Clemente | 00:20
+Sorry. I hope I didn't scare you all too much. I didn't realize I was supposed to join early. I was just doing my last-minute prep and yeah, ready to rock because we're starting in two minutes.
+Aaron Newcombe | 00:29
+Good, because we're starting in two minutes, make sure your Slack and your phone are silenced.
+Roderick Clemente | 00:31
+Yeah, make sure your Slack and your phone are silenced. Yes, sir.
+And did you see my. Did you see my message, Aaron, about the question that I was hoping you'd ask me?
+Aaron Newcombe | 00:43
+Yeah.
+Roderick Clemente | 00:43
+Yeah, hopefully, I'll ask it at the right place.
+Aaron Newcombe | 00:43
+Hopefully. I'll ask it at the right place.
+Roderick Clemente | 00:45
+We'll... If we go through as I'm showing the rollback, not the first rollback, but the DB coupled rollback, and I show here's how we can rollback the database and the flags at the same time and ask that question.
+Aaron Newcombe | 00:45
+We'll see as we go through here.
+Roderick Clemente | 00:57
+Okay, cool, I'll wait for that.
+Aaron Newcombe | 00:57
+Okay. Okay, I'll wait for that.
+Roderick Clemente | 00:58
+Yeah, I mean I may chime in with a few more yeah, feel free to do so yeah, do that absolutely, man, absolutely, let's make this fun and interactive.
+Aaron Newcombe | 01:00
+I may chime in with a few more simple things I like to do that're they're always easy questions, though, like, yeah.
+Roderick Clemente | 01:07
+They're always the easy questions, though, like, yeah, exactly.
+Aaron Newcombe | 01:11
+"Wait, what was that thing you just clicked on?"
+Roderick Clemente | 01:11
+Wait, what was that thing you just clicked on?
+Aaron Newcombe | 01:12
+You know.
+Roderick Clemente | 01:13
+Yeah, for sure.
+Aaron Newcombe | 01:13
+Okay.
+Roderick Clemente | 01:16
+All right, we've got...
+Speaker 2 | 01:16
+All right, we've got... So I just want to really quickly make sure I'm aligned on the flow, so I'm going to start the stream in one minute.
+Roderick Clemente | 01:17
+So I just want to really quickly make sure I'm aligned on the flow. So I'm going to start the stream in 1 minute. You'll see a one-minute countdown timer.
+Speaker 2 | 01:23
+You'll see a one-minute countdown timer.
+Roderick Clemente | 01:25
+After that runs out is when I will add the presentation deck and then you to the stage.
+Speaker 2 | 01:25
+After that runs out is when I will add the presentation deck and then both of you to the stage. Just to note.
+Roderick Clemente | 01:32
+Just to note.
+Yeah, those figure boxes, to get a bit more narrow, you both should have access to drive this.
+Speaker 2 | 01:33
+Yep, the speak boxes do get a bit more narrow. You both should have access to drive this, and so whenever it is time to switch over to that demo...
+Roderick Clemente | 01:39
+So whenever it is time to switch over to that demo. Rod, are you driving?
+Speaker 2 | 01:42
+Rod, are you driving? Who's doing the demo?
+Roderick Clemente | 01:44
+I'm doing the demo.
+Aaron Newcombe | 01:45
+Rod's doing the demo.
+Roderick Clemente | 01:45
+Rod's doing the demo.
+I'll start with introductions and all that.
+Aaron Newcombe | 01:46
+I'll start with introductions and all that.
+Roderick Clemente | 01:49
+Perfect.
+Speaker 2 | 01:49
+Perfect.
+Roderick Clemente | 01:50
+So, Rod, if you can go ahead and share your screen, and then whenever it's time for that, we'll just switch the visual on stage.
+Speaker 2 | 01:50
+So, Rod, if you can go ahead and share your screen, and then whenever it's time for that, we'll just switch the visual on stage.
+Roderick Clemente | 01:57
+You're both staying on stage for the entire event.
+Speaker 2 | 01:57
+You're both staying on stage for the entire event.
+Roderick Clemente | 02:00
+When you're done with the demo, let us know.
+Speaker 2 | 02:00
+When you're done with the demo, let us know. We'll go back to the deck, it'll be where we left off, and you take it from there.
+Roderick Clemente | 02:02
+We'll go back to the deck, it'll be where we left off, and you take it from there. Cool.
+Aaron Newcombe | 02:08
+Cool.
+Roderick Clemente | 02:09
+So we...
+Aaron Newcombe | 02:09
+So we...
+Roderick Clemente | 02:09
+Should I stay in gallery or...
+Aaron Newcombe | 02:09
+Should I stay in gallery or...
+Roderick Clemente | 02:11
+Or should I move to stage?
+Aaron Newcombe | 02:11
+Or should I move to stage?
+Roderick Clemente | 02:13
+Stage is probably easiest.
+Speaker 2 | 02:13
+Stage is probably easiest.
+Aaron Newcombe | 02:15
+Okay, yeah, that looks...
+Roderick Clemente | 02:15
+Can you see okay, to this what I'm showing you here? Yes, I can see it.
+Speaker 2 | 02:18
+Yes, I can see it. So even if you're in set and then you move to the demo.
+Roderick Clemente | 02:19
+So even if you're in set and then you move to the demo.
+Speaker 2 | 02:23
+I will wait till you're on that demo page to put it on stage, and then Aaron can give you a "Hey, that looks good."
+Roderick Clemente | 02:23
+I will wait till you're on that demo page to put it on stage, and then Aaron can give you a "Hey, that looks good." Kind of cute.
+Speaker 2 | 02:29
+Kind of cute.
+Roderick Clemente | 02:30
+Okay, I'm going to take you off, so don't stop the screen share, just keep it.
+Speaker 2 | 02:31
+I'm going to take you off, so don't stop the screen share, just keep it.
+Roderick Clemente | 02:36
+The audience can't see it right now.
+Speaker 2 | 02:36
+The audience can't see it right now.
+Roderick Clemente | 02:37
+I'm going to bring you both down.
+Speaker 2 | 02:37
+I'm going to bring you both down. You're automatically muted.
+Roderick Clemente | 02:38
+You're automatically muted.
+Speaker 2 | 02:40
+I'm going to meet myself, turn my camera off, and we'll get started.
+Roderick Clemente | 02:40
+I'm going to be myself, turn my camera off, and we'll get started.
+Speaker 2 | 02:43
+If at any point you have questions, or need me for anything, please use this speaker chat or feel free to shout me out.
+Roderick Clemente | 02:43
+If at any point you have questions, or need me for anything, please use the speaker chat or feel free to shout me out.
+Speaker 2 | 02:51
+Hey, Daily.
+Roderick Clemente | 02:51
+Hey, Daily.
+Speaker 2 | 02:52
+Hey, host.
+Roderick Clemente | 02:52
+Hey, host.
+Speaker 2 | 02:53
+It's a live webinar.
+Roderick Clemente | 02:53
+It's a live webinar. Things happen, and people like it, so sounds good.
+Speaker 2 | 02:54
+Things happen, and people like it. So I can't hear either of you, but I think you said yes.
+Roderick Clemente | 02:58
+I can't hear either of you, but I think you said...
+Aaron Newcombe | 03:01
+Yeah, I was just going to... Well, I was muted.
+Roderick Clemente | 03:01
+Yeah, I was just going to... Well, I was muted.
+Aaron Newcombe | 03:04
+Do we need to...?
+Roderick Clemente | 03:04
+Do we need to. Do we need to unmute ourselves?
+Aaron Newcombe | 03:04
+Do we need to unmute ourselves?
+Roderick Clemente | 03:06
+When this starts?
+Aaron Newcombe | 03:06
+When this starts?
+Speaker 2 | 03:07
+You will be automatically unmuted when I put you on the stage.
+Roderick Clemente | 03:07
+You will be automatically unmuted when I put you on the stage.
+Aaron Newcombe | 03:10
+Okay.
+Roderick Clemente | 03:10
+Okay. Perfect, thank you.
+Aaron Newcombe | 03:10
+Perfect, thank you both.
+Well, everybody, thanks for joining today.
+Roderick Clemente | 04:39
+Well, hey everybody, thanks for joining today.
+Aaron Newcombe | 04:42
+Let's go ahead and get started.
+Roderick Clemente | 04:42
+Let's go ahead and get started. My name's Aaron Newcombe.
+Aaron Newcombe | 04:44
+My name's Aaron Newcombe. We're going to be talking today about some interesting ways to use feature flags with databases.
+Roderick Clemente | 04:45
+We're going to be talking today about some interesting ways to use feature flags with databases.
+Aaron Newcombe | 04:51
+These might be some things that you haven't thought about doing.
+Roderick Clemente | 04:51
+These might be some things that you haven't thought about doing before.
+Aaron Newcombe | 04:56
+But before we get into all that and what we're going to be talking about today, let's just do some quick introductions.
+Roderick Clemente | 04:56
+But before we get into All that and what we're going to be talking about today, let's just do some quick introductions.
+Aaron Newcombe | 05:00
+As I said, my name's Aaron Newcombe.
+Roderick Clemente | 05:00
+As I said, my name's Aaron Newcombe.
+Aaron Newcombe | 05:02
+I work at Harness and primarily I work with our feature flag product.
+Roderick Clemente | 05:02
+I work at Harness and primarily I work with our feature flag product, flags, and experimentation.
+Aaron Newcombe | 05:07
+Feature flags and experimentation.
+Roderick Clemente | 05:09
+If you didn't know that, harness those future flags and experimentation. Now you do, and you should definitely go check it out because it is quite a compelling product, especially when you combine it with some of the other things in our platform like CICD or, in this case, database DevOps, which is pretty interesting, and that's what we're going to be talking about today.
+Aaron Newcombe | 05:09
+If you didn't know that Harness does feature flags and experimentation, now you do, and you should definitely go check it out because it is quite a compelling product, especially when you combine it with some of the other things in our platform like CCD or, in this case, database DevOps, which is pretty interesting.
+That's what we're going to be talking about today.
+Roderick Clemente | 05:28
+But that's me.
+Aaron Newcombe | 05:29
+But that's me.
+Roderick Clemente | 05:29
+And I want to introduce my compadre today.
+Aaron Newcombe | 05:30
+I want to introduce my compadre today. Rod.
+Roderick Clemente | 05:32
+Rod.
+Aaron Newcombe | 05:32
+Rod.
+Roderick Clemente | 05:32
+Rod, do you want to introduce yourself real quick?
+Aaron Newcombe | 05:33
+You want to introduce yourself real quick?
+Roderick Clemente | 05:34
+Hey, Rod Clement, I'm here with Harness. I've spent over a decade in the data integration, feature management, and DevOps space.
+So very passionate about what we're going to be discussing today. And yeah, looking forward to chatting with you, Aaron, and, you know, hearing from the crowd.
+Aaron Newcombe | 05:54
+Yeah, sounds like fun, so let's just go ahead.
+Roderick Clemente | 05:54
+Yeah, sounds like fun. So let's just go ahead.
+Aaron Newcombe | 05:58
+We just did this part.
+Roderick Clemente | 05:58
+We just did this part. [Laughter] I forgot to advance the slide.
+Aaron Newcombe | 06:00
+I forgot to advance the slide.
+Roderick Clemente | 06:01
+Here's a little bit more about us if you need to know.
+Aaron Newcombe | 06:02
+Here's a little bit more about us if you need to know.
+Roderick Clemente | 06:04
+Let's go ahead and move on since we already did that.
+Aaron Newcombe | 06:05
+Let's go ahead and move on since we already did that.
+So let's talk about database changes for a little bit.
+Roderick Clemente | 06:09
+So let's talk about database changes for a little bit. What happens with database changes?
+Aaron Newcombe | 06:11
+What happens with database changes? Like.
+Roderick Clemente | 06:13
+Like.
+Aaron Newcombe | 06:13
+Kind of curious.
+Roderick Clemente | 06:13
+Kind of curious.
+Aaron Newcombe | 06:14
+I know from talking to our customers, database changes seem to be still an all-or-nothing event.
+Roderick Clemente | 06:14
+I know from talking to our customers, database changes seem to be still an all-or-nothing event.
+Aaron Newcombe | 06:21
+You know, this big bang type of thing where you're going to go and do a database change.
+Roderick Clemente | 06:21
+You know, this big bang type of thing where you're going to go in and do a database change.
+Aaron Newcombe | 06:25
+Of course, you do some testing behind the scenes or whatever, then when you go ahead and get ready to release it, you know it just goes forward.
+Roderick Clemente | 06:25
+Of course, you do some testing behind the scenes or whatever. Then when you go ahead and get ready to release it, you know it just goes forward.
+Aaron Newcombe | 06:31
+Hopefully, nothing goes wrong.
+Roderick Clemente | 06:31
+Hopefully nothing goes wrong, you know.
+Aaron Newcombe | 06:32
+You know you keeping your fingers crossed one big deploy goes out.
+Roderick Clemente | 06:32
+Keeping your fingers crossed. One big deploy goes out, no kill switch is necessarily in place.
+Aaron Newcombe | 06:37
+No kill switches are necessarily in place.
+Roderick Clemente | 06:39
+If something does go wrong and if something does go wrong, then you have to go to the war room.
+Aaron Newcombe | 06:39
+If something does go wrong and if something does go wrong, then you have to go into the war room.
+Roderick Clemente | 06:44
+You have to do this rollback.
+Aaron Newcombe | 06:44
+You have to do this rollback.
+Roderick Clemente | 06:45
+What about our data?
+Aaron Newcombe | 06:45
+What about our data? How do we merge things back together?
+Roderick Clemente | 06:46
+How do we merge things back together? How do we point people back to the right place?
+Aaron Newcombe | 06:48
+How do we point people back to the right place?
+Roderick Clemente | 06:50
+Do we need to do something with the application now because the database is messed up and blah?
+Aaron Newcombe | 06:50
+Do we need to do something with the application now because the database is messed up and blah? It goes on and on.
+Roderick Clemente | 06:55
+It goes on and it can be a pretty big problem.
+Aaron Newcombe | 06:56
+It can be a pretty big problem. I remember going way back when I used to do this type of thing and there was some pretty serious planning, months and months of planning to make sure that when we did a cutover like this to schemes weren't maybe quite as much of a hassle.
+Roderick Clemente | 06:58
+I remember going way back when I used to do this type of thing and there was some pretty serious planning, months and months of planning to make sure that when we did a cutover like this to schemes weren't maybe quite as much of a hassle.
+Aaron Newcombe | 07:13
+But you always have application concerns, database concerns, or things are going to match up the way that they were before.
+Roderick Clemente | 07:13
+But, you know, you always have application concerns, database concerns. Are things going to match up the way that they were before? It is a big concern for folks, especially if you're dealing with any financial data.
+Aaron Newcombe | 07:21
+It is a big concern for folks.
+Roderick Clemente | 07:26
+Exactly, or regulated data, anything that's governed like that.
+Aaron Newcombe | 07:26
+Exactly. Or regulated data, anything that's governed like that.
+Roderick Clemente | 07:31
+Yeah.
+Aaron Newcombe | 07:31
+Yeah.
+Roderick Clemente | 07:31
+You got to...
+Aaron Newcombe | 07:31
+You got to... You got to be careful.
+Roderick Clemente | 07:32
+You've got to be careful. As I mentioned.
+Aaron Newcombe | 07:34
+As I mentioned, you know, Harness is a whole platform.
+Roderick Clemente | 07:34
+You know, Aness is a whole platform. So I wanted to highlight the things that we're going to be talking about today, which is DB DevOps and feature management experimentation.
+Aaron Newcombe | 07:37
+So I wanted to highlight the things that we're going to be talking about today, which is DB DevOps and feature management and experimentation.
+Roderick Clemente | 07:45
+But we have a whole platform, right?
+Aaron Newcombe | 07:45
+But we have a whole platform, right? The nice thing about Harness is that these things integrate.
+Roderick Clemente | 07:46
+The nice thing about Harness is that these things integrate. We'll be talking about pipelines quite a bit as we go through the demo.
+Aaron Newcombe | 07:49
+We'll be talking about pipelines quite a bit as we go through the demo.
+Roderick Clemente | 07:53
+There's a generic view of a pipeline or release pipeline, for example, but in the product, we actually have pipelines that you can configure with YAML and things like that.
+Aaron Newcombe | 07:53
+There's a generic view of a pipeline or release pipeline, for example, but in the product, we actually have pipelines that you can configure with YAML and things like that.
+Roderick Clemente | 08:01
+They're great, right?
+Aaron Newcombe | 08:01
+They're great, right?
+So wouldn't it be cool if all those things played nicely together?
+Roderick Clemente | 08:02
+So wouldn't it be cool if all those things played nicely together? Well, that's what Harness brings to the table, and that's what we're going to be talking about today.
+Aaron Newcombe | 08:05
+Well, that's what Harness brings to the table, and that's what we're going to be talking about today. The Harness platform is powered by AI, as everything is today.
+Roderick Clemente | 08:09
+The Harness platform is powered by AI, as everything is today.
+Aaron Newcombe | 08:12
+But we really do take a look at how to build this.
+Roderick Clemente | 08:12
+But we really do take a look at how to build this.
+Aaron Newcombe | 08:16
+If you look at that diagram on the bottom, how to build this intelligent workflow orchestration that drives what that AI is able to do.
+Roderick Clemente | 08:16
+If you look at that diagram on the bottom, how to build this intelligent workflow orchestration that drives what that AI is able to do.
+Aaron Newcombe | 08:24
+Anybody can implement an AI chatbot or whatever into their product, but if you don't have that right data as the foundation, then the answers that you're going to get back are going to be garbage, right?
+Roderick Clemente | 08:24
+Anybody can implement an AI chatbot or whatever into their product, but if you don't have that right data as the foundation, then the answers that you're going to get back are going to be garbage, right? We've all had that experience.
+Aaron Newcombe | 08:33
+We've all had that experience.
+Roderick Clemente | 08:34
+Probably as we've used AI agents now in our daily lives.
+Aaron Newcombe | 08:34
+Probably as we've used AI agents now in our daily lives.
+Roderick Clemente | 08:37
+But that's what we're going to be talking about today.
+Aaron Newcombe | 08:37
+But that's what we're going to be talking about today.
+Roderick Clemente | 08:39
+We're going to be talking about database step ups, feature management, and experimentation.
+Aaron Newcombe | 08:39
+We're going to be talking about database step ups, feature management, and experimentation. Combine those two wonder powers together and what can you do?
+Roderick Clemente | 08:44
+Combine those two wonder powers together and what can you do?
+Aaron Newcombe | 08:47
+We're going to see a demo in just a minute, so let's talk about feature flags first.
+Roderick Clemente | 08:47
+We're going to see it in just a minute.
+So let's talk about feature flags first.
+Aaron Newcombe | 08:53
+You know, if you...
+Roderick Clemente | 08:53
+You know, if you...
+Aaron Newcombe | 08:54
+If you're not familiar, if you're coming to this from maybe the DBA realm or the database management realm, you may not be familiar with feature flags, or you may...
+Roderick Clemente | 08:54
+If you're not familiar, if you're coming to this from maybe the DBA realm or the database management realm, you may not be familiar with feature flags. Or you may...
+Aaron Newcombe | 09:02
+Right?
+Roderick Clemente | 09:03
+You may have heard we're going to turn that feature on for our beta customers because it's behind a feature flag, so we'll enable it for this person that signed up for the beta.
+Aaron Newcombe | 09:03
+You may have heard we're going to turn that feature on for our beta customers because it's behind a feature flag.
+So we'll enable it for this person that signed up for the beta. That's mostly what people know it for.
+Roderick Clemente | 09:13
+That's mostly what people know it for. That's what I knew it for.
+Aaron Newcombe | 09:16
+That's what I knew it for before I got more involved.
+Roderick Clemente | 09:17
+But don't forget we're involved. Go ahead.
+Aaron Newcombe | 09:19
+Go ahead, Ron.
+Roderick Clemente | 09:20
+The anti-pattern is, of course, trying to use your database as a poor man's feature management system, which creates pain for everyone. [Laughter] Exactly.
+Aaron Newcombe | 09:27
+Exactly.
+Roderick Clemente | 09:28
+Exactly.
+Aaron Newcombe | 09:28
+Exactly. But there's so much more to feature flags, right?
+Roderick Clemente | 09:29
+But there's so much more to feature flags, right? Than just opening up your new feature to beta customers.
+Aaron Newcombe | 09:31
+Than just opening up your new feature to beta customers.
+Roderick Clemente | 09:38
+It's about testing new features in production.
+Aaron Newcombe | 09:38
+It's about testing new features in production.
+Roderick Clemente | 09:40
+You can actually do a A/B testing or progressive rollouts.
+Aaron Newcombe | 09:40
+You can actually do a A/B testing or progressive rollouts.
+Roderick Clemente | 09:44
+You can work with your CD environment that's probably doing a canary rollout and do feature by feature progressive rollouts behind that.
+Aaron Newcombe | 09:44
+You can work with your CD environment.
+That's probably doing a canary rollout and do feature by feature progressive rollouts behind that so you can turn off.
+Roderick Clemente | 09:52
+So you can turn off.
+Aaron Newcombe | 09:54
+You can use it as a kill switch to turn off just a particular feature that goes bad instead of having to roll back the whole deployment.
+Roderick Clemente | 09:54
+You can use it as a kill switch to turn off just a particular feature that goes bad instead of having to roll back the whole deployment, right?
+Aaron Newcombe | 10:01
+Right. So it really gives you a safety net that your incident team...
+Roderick Clemente | 10:02
+So it really gives you a safety net that your incident team, if something really goes wrong as you're rolling out that feature to 1% of users or internal users, they can quickly go in that feature flag, turn it off, and then you're back to whatever you were doing previously.
+Aaron Newcombe | 10:07
+If something really goes wrong as you're rolling out that feature to 1% of users or internal users, they can quickly go in, hit that feature flag, and turn it off, and then you're back to whatever you were doing previously.
+Roderick Clemente | 10:20
+So it really is kind of.
+Aaron Newcombe | 10:20
+So it really is kind of.
+Roderick Clemente | 10:23
+If you haven't used it before, if you haven't been in this space where you're thinking about future flags, I wanted to give an overview because when we get to other applications like schema migrations and creating new tables that you want to test and things like that, then you're starting to realize what the benefit of the feature flag is, right?
+Aaron Newcombe | 10:23
+If you haven't used it before, if you haven't been in this space where you're thinking about feature flags, I wanted to give an overview because when we get to other applications like schema migrations and creating new tables that you want to test and things like that, then you're starting to realize what the benefit of the feature flag is, right?
+Because we'll get into that more in a little bit later, but we're going to combine these two superpowers to make something even bigger.
+Roderick Clemente | 10:42
+Because we'll get into that more in a little bit later, but we're going to combine these two superpowers to make something even bigger.
+Aaron Newcombe | 10:50
+So when we think about things like the risks in, considering what we're doing around databases, like what would we want to prevent, what would we want to make sure that we could improve, make sure that our processes happen more smoothly?
+Roderick Clemente | 10:50
+So when we think about things like the risks in considering what we're doing around databases, like what would we want to prevent, what would we want to make sure that we could improve, make sure that our processes happen more smoothly? Then we're going to be looking at things like these three use cases, and the first one we're actually going to do a live demo of, right?
+Aaron Newcombe | 11:04
+Then we're going to be looking at things like these three use cases, and the first one we're actually going to do a live demo of, right?
+Roderick Clemente | 11:12
+Ron?
+Aaron Newcombe | 11:12
+Ron?
+Roderick Clemente | 11:12
+Yep. [Laughter] That's why Rod's here.
+Aaron Newcombe | 11:15
+That's why Rod's here. He's on the hook for this, in addition to his broad background.
+Roderick Clemente | 11:16
+He's on the hook for this, in addition to his... I have a little bit on use case three, depending on Tim, and you can keep me out.
+Aaron Newcombe | 11:23
+Okay, sounds good.
+Roderick Clemente | 11:23
+Okay? Sounds good. Sounds good.
+Aaron Newcombe | 11:24
+Sounds good. We'll do as much as we can, but we thought we would start with use case one for a demo and go from there.
+Roderick Clemente | 11:25
+We'll do as much as we can, but we thought we would start with use case one for a demo and go from there. But you can actually see, for example, what is the concern around schema migrations, right? But you can actually see, for example, what is the concern around schema migrations, right?
+Aaron Newcombe | 11:30
+But you can actually see, for example, is what it what is the concern around schema migrations, right?
+Roderick Clemente | 11:38
+You deploy a new schema, you deploy your application.
+Aaron Newcombe | 11:38
+You deploy a new schema, you deploy your application, of course, that goes with that, and then you hope it all goes well.
+Roderick Clemente | 11:41
+Of course, that goes with that, and then you hope it all goes well.
+Aaron Newcombe | 11:45
+If it doesn't, you have to do this big rollback, right?
+Roderick Clemente | 11:45
+And if it doesn't, you have to do this big back, right?
+Aaron Newcombe | 11:48
+But if you're using feature flags now, you have a way to have an instant kill switch in that path so that if something goes wrong, you can immediately switch back to the way things were going before.
+Roderick Clemente | 11:48
+But if you're using feature flags now, you have a way to have an instant kill switch in that path so that if something goes wrong, you can immediately switch back to the way things were going before.
+Like I said, we're going to get into this one in detail, so I don't want to go into too much there.
+Aaron Newcombe | 11:58
+Like I said, we're going to get into this one in detail, so I don't want to go into too much there. What about use case two?
+Roderick Clemente | 12:04
+What about use case two?
+Aaron Newcombe | 12:05
+Rod the query optimization use case.
+Roderick Clemente | 12:05
+Rod the query optimization use case. I have a little bit I can talk about on that live, but the idea is that, you know, obviously we can do this in the lab, right?
+And we can, you know, try and test our queries and. Okay, we think this one is going to be, you know, superior. But it doesn't really matter what happens in dev or in QA, right? The only thing that matters is production.
+And you know, you can't simulate the Internet in a box, right? So like, getting that real traffic shaping and user data shape is. Yeah, so I'll touch on that a little bit. I'm gonna try and touch on all three if we if time allows a demo today.
+Aaron Newcombe | 12:39
+Okay, cool.
+Roderick Clemente | 12:41
+So you're cool, and then use case three.
+Aaron Newcombe | 12:42
+And then use case 3.
+Roderick Clemente | 12:43
+We're going to talk a little bit about database migration as well, and there are some things to consider there, right?
+Aaron Newcombe | 12:43
+We're going to talk a little bit about database migration as well. And there are some things to consider there, right?
+Roderick Clemente | 12:48
+How do you manage rights when you're doing database?
+Aaron Newcombe | 12:48
+How do you manage rights when you're doing database?
+Roderick Clemente | 12:51
+I could be interested in your take on that, Rod.
+Aaron Newcombe | 12:51
+I'm interested in your take on that, Rod.
+But we'll get there in a little bit.
+Roderick Clemente | 12:53
+But we'll get there in a little bit.
+Aaron Newcombe | 12:55
+But obviously, database.
+Roderick Clemente | 12:55
+But obviously database.
+Aaron Newcombe | 12:56
+You know, complete database migrations are especially with a large organization with multiple databases.
+Roderick Clemente | 12:56
+You know, complete database migrations are especially with a large organization with multiple databases.
+Aaron Newcombe | 13:02
+You're moving things around.
+Roderick Clemente | 13:02
+You're moving things around.
+Aaron Newcombe | 13:03
+You want to make sure that goes smoothly.
+Roderick Clemente | 13:03
+You want to make sure that goes smoothly because the last thing you want to have happen as part of your database migration is have users impacted or critical data like we talked about before, right?
+Aaron Newcombe | 13:04
+Because the last thing you want to have happen as part of your database migration is to have users impacted or critical data like we talked about before, right? Governed data, regulated data.
+Roderick Clemente | 13:12
+Governed data, regulated data, financial data.
+Aaron Newcombe | 13:15
+You know, you want to make sure that.
+Roderick Clemente | 13:17
+Yeah, exactly.
+Aaron Newcombe | 13:17
+Yeah, exactly. You want to make sure everything's going smoothly.
+Roderick Clemente | 13:18
+You want to make sure everything's going smoothly.
+Aaron Newcombe | 13:20
+So we'll talk a little bit more about data migration as well. And some of the things to consider there.
+Roderick Clemente | 13:20
+So we'll talk a little bit more about data migration as well and some of the things to consider there.
+Aaron Newcombe | 13:25
+By the way, as we're going through this, we're just about to hit the demo.
+Roderick Clemente | 13:25
+By the way, as we're going through this, we're just about to hit the demo.
+But as we're going through this, if you...
+Aaron Newcombe | 13:28
+But as we're going through this, if I've already sparked a question in your head about how to use feature flags with databases or some things that maybe you've tried this in the past that didn't work out, whatever, go ahead and use that live Q&A box that's in the platform here.
+Roderick Clemente | 13:30
+If I've already sparked a question in your head about how to use feature flags with databases or some things that maybe you've tried this in the past that didn't work out, whatever, go ahead and use that live Q&A box that's in the platform here.
+Aaron Newcombe | 13:43
+Go ahead and put your questions in because we want to be able to answer those as we're going through.
+Roderick Clemente | 13:43
+Go ahead and put your questions in because we want to be able to answer those as we're going through.
+But then we'll leave time on at the end to answer some questions as well.
+Aaron Newcombe | 13:48
+But then we'll leave time on at the end to answer some questions as well. But don't wait, because I always wait.
+Roderick Clemente | 13:51
+But don't wait, because I always wait. And then I'm like, "I'm not going to put that in, it's almost over."
+Aaron Newcombe | 13:53
+And then I'm like, "I'm not going to put that in. It's almost over."
+Roderick Clemente | 13:55
+No, go ahead and put the question in.
+Aaron Newcombe | 13:56
+No, go ahead and put the question in. We'll try to answer it live if we can.
+Roderick Clemente | 13:57
+We'll try to answer it live if we can. Sounds good.
+Aaron Newcombe | 14:02
+All right, so now let's go ahead and cut over to Rod and talk about this zero downtime scheme of migration.
+Roderick Clemente | 14:02
+All right, so now let's go ahead and cut over to Rod and talk about this zero downtime scheme of migration.
+Aaron Newcombe | 14:08
+I'm really excited to see what we can do here.
+Roderick Clemente | 14:08
+I'm really excited to see what we can do here. Rod, yeah.
+Speaker 2 | 14:11
+Rod.
+Roderick Clemente | 14:12
+Can you all see my screen? So again, like, here's the deal.
+And you know, obviously I'd say the biggest reason that, you know, many of us have bought into feature management is to cut the crowd.
+Speaker 2 | 14:25
+Hey Rod, sorry, can you request to share your screen, please?
+Roderick Clemente | 14:26
+Sorry. Can you request to share your screen? I can, and I'm on the expand contract pattern slide, by the way, if you want to talk through it.
+Aaron Newcombe | 14:31
+I'm on the expand contract pattern slide. Rod, by the way, if you want to talk it, we'll do it live.
+Roderick Clemente | 14:35
+Yep, give me one second, we'll do it live.
+All right, can you see my screen now?
+Aaron Newcombe | 14:48
+Not quite.
+Roderick Clemente | 14:48
+Not quite, we're getting there.
+Aaron Newcombe | 14:48
+We're getting there.
+Roderick Clemente | 14:49
+There we go.
+Aaron Newcombe | 14:49
+There we go. There it is.
+Roderick Clemente | 14:50
+Beautiful. Okay, yeah. So, like I said, one of the biggest reasons that many of us bought into feature management is to cut that cord, right? Your release stops being chained to your deploy. You can ship the code dark and you flip it when you're good, right? The database doesn't need to be part of the critical path.
+Again, that's true most of the time. Okay, but what happens when the feature can run until the scheme has been updated? The table has been created? Right? So today isn't about flags decoupling everything, it's when that coupling is unavoidable. How do you keep zero time downtime? How do you keep full control?
+How do you do this smoothly? But before we jump into that, just to ground you, here's our standard end-to-end pipeline. For the majority of our releases, they're going to go through this automatically, and it's going to handle both halves of the release. The database changes.
+Again, you can see here we're applying updates in our dev environment, our QA, and our production environment. Then there's the feature release, right? We have humans in the loop. Where necessary, we turn this on for QA, we turn it on for beta users, we get an approval, the GA rollout, we run experiments, and finally we're going to clean up the flag, right?
+The key thing is this is all happening automatically and asynchronously. I'd say for 80-90%. So I get a little notification here. I'd say for 80 to 90% of our releases, the DB and the feature flag can ride on their own tracks, right? Most of our code...
+That's not going to be a problem. In fact, that decoupling is actually working pretty much exactly the way that you wanted it, right? But if we take a look right here, this is our quantum bank, a bank that's been built for developers.
+It's fictitious.
+Speaker 2 | 16:38
+Hey Rob, I'm so sorry to chime in again.
+Roderick Clemente | 16:40
+Yes, I'm so sorry to chime in again. It looks like... Can you please read a request to share your screen?
+Speaker 2 | 16:41
+It looks like... Can you please read a request to share your screen?
+Roderick Clemente | 16:44
+Sure. [Laughter] We lost you there for a second.
+Aaron Newcombe | 16:46
+We lost you there for a second.
+Roderick Clemente | 16:48
+Okay, yeah, no problem. Good thing you let me know.
+Okay, can you see now back in the screen? Okay, cool. Four back. Yeah, okay, great. So, we're actually watching a live release here, and we tried to ship this release, and there were some issues. A degradation of service for some people. Looks like in some of our international locations.
+If we look here and... Okay, all right, so this is a failed release. Okay, now we can look here and see what happened. We updated the database as expected, but our AI verify caught that something was wrong. Now the good news is we've got this all linked to our observability tools, so we're able to drill in here on things like average response time and errors per minute for this transaction group.
+Everything was really unhealthy, right? All above where we'd want them to be. But the good news is, no worries. We're not paging anyone, we're not waking anyone up in the middle of the night. After this was detected, we did a Canary rollback delete, we undid those database changes, and we're going to go and update the ticket, right, so people can come and fix it first thing tomorrow morning.
+It's now self-healed. If you look here, we can look across all of my database environments worldwide. Again, the last couple of changes have all been very healthy, but this one here, it looks like it was healthy for our US environments.
+But production in the Middle East, in the European Union, APJ, Africa, all of those came back unhealthy. So, we did the right thing, we rolled it back, and everything's in a good place, right?
+Aaron Newcombe | 18:30
+No.
+Roderick Clemente | 18:34
+So again, like I said, that standard works 90% of the time, and that's all you needed, right? And again, in this case, no human really had to jump in there. It itself healed because the database and the feature flag were not tied together.
+Again, in a more complex environment, we're going to need to do something a little bit different. So again, this is... Let me ask about this.
+Aaron Newcombe | 18:54
+So this is... But let me ask about this.
+Roderick Clemente | 18:55
+Because, I mean, you're still able to do that rollback.
+Aaron Newcombe | 18:56
+Because I mean, you're still able to do that rollback, though. I mean, there's still a lot of value here, right?
+Roderick Clemente | 18:58
+I mean, there's still a lot of value here, right?
+Aaron Newcombe | 19:00
+Because you're still able to basically do that rollback automatically and cleanly.
+Roderick Clemente | 19:00
+Because you're still able to basically do that rollback automatically and cleanly.
+Aaron Newcombe | 19:05
+I mean, this would have been a nightmare without a tool like this.
+Roderick Clemente | 19:05
+I mean, this would have been a nightmare without a tool like this, right?
+Aaron Newcombe | 19:07
+Right?
+Roderick Clemente | 19:08
+That's right. That's one of the key things for Harness. We ask you to define what your happy path is and what your unhappy path is. So we think about that in advance.
+Then, allowing you to integrate this with all of your observability tools means we can very quickly determine when unhealthy code gets... Look, you can see we've done extensive testing in all of our lower environments in our building from a security standpoint.
+But as I said, you can't simulate production in a box. There's really nothing like your real user traffic.
+Aaron Newcombe | 19:37
+Yeah.
+Roderick Clemente | 19:40
+Yes. So with this new rewards feature that we're building, it's a slightly more complex feature, right?
+Again, because this is very important to the business, we want to push people onto our higher silver and gold tiers. You know, the rewards are going to behave very differently by the tier. So there was a lot of debate back
+and forth. "Hey, can this just be another column on our account? That's going to be a lot less painful?" But because of the complexity and how much the business is leaning in, we said, "No, look, rewards really needs to be its own table."
+That's the moment that this kind of became a lot more complex and a little bit more tightly coupled. So the feature really cannot run until that table's there, right? So we've got a different pipeline for when it's coupled like this.
+I'm going to flip over and show you that right here. So again, you can see here. This is I'll foreshadow a little bit. We recently did a migration from SQLite to PostgreSQL. We stressed that as far as we could go, and we needed to do it.
+So you can see we're still testing extensively in both environments here. Then, as we're going to deploy this into the dev environment again, it's pretty much our standard way of doing it. Preview those changes.
+It's approved. This approval can be our DBA or our change management users. Honestly speaking, in the dev environment, it's an auto-approved because we have a lot more control here. Then we're going and running through our standard flag release. That process I showed you before.
+So because this is a pretty standardized thing, we turn this into a template. So in the later environments, you can see here that I've...
+Aaron Newcombe | 21:20
+Oops, we've lost you again.
+Roderick Clemente | 21:21
+We've lost you again. Okay. [Laughter] Did you put your screen sharing behind a feature flag?
+Aaron Newcombe | 21:30
+Did you put your screen sharing behind a feature Slack? Is somebody toggling that?
+Roderick Clemente | 21:32
+Is somebody toggling that?
+Aaron Newcombe | 21:33
+Not off.
+Roderick Clemente | 21:33
+You know what? I think this is a secret Z-scale demonstration.
+Maybe they're in there. [Laughter] I think that's exactly what I'm [Laughter] just kidding, right?
+Aaron Newcombe | 21:39
+I think that's exactly what it is.
+Roderick Clemente | 21:43
+Okay, yeah, so can you see my screen again?
+Aaron Newcombe | 21:45
+Yes.
+Roderick Clemente | 21:45
+Yes. All right. So you can see that I've taken what we were doing in that dev environment, and I'm showing you an example of how we're tepolatizing this process.
+So even though this is a slightly different way of releasing, we're still able to share templates back and forth and enforce our standards in that way, right? So you can see in the QA environment.
+So for dev, give us a little bit of an auto-approved no big deal. In this QA environment, though, we want to make sure that we don't knock things down so that we can keep our QA team up and running.
+Again, you can see here, I'll show you what that template looks like again. Here's our standard flag rollout. We're doing an alerts event listener because this one is a little bit more sensitive, so we're going to ingest a bunch of that experimentation metric data.
+I'll show you that a little bit later. Then the standard DB1 looks like what you saw before preview, approve, apply, right? So OOPs, back to this. So again, you can see how we're doing that there. We're doing the verify, and we're swapping now the blue for the green once we've determined that.
+Yeah, this is indeed healthy. Again, if it's not, we've got our rollback predefined where we're going to roll back that database change, we're going to flip those flags all the way off. Again, something that we talked about before, like what do you want to happen if things are behaving in an unhealthy manner?
+Again, here we are doing this in our production environment. For this, we're doing a canary deployment. One of the nice things about Harness is that it makes it very easy to do blue, green, and canary releases right out of the box.
+So again, we're in this canary release updating that production database. We're updating those flags. We're doing that. Verify linking in with various metrics, both from observability tools and experimentation.
+Again, this is where we define what does that rollback look like? In this case, if things are unhealthy, we're going to do a canary delete. We're rolling back and we're going to undo that database change. We're going to undo the feature, we're going to turn those flags off as well. Cool.
+Aaron Newcombe | 23:53
+Cool. Do you...?
+Roderick Clemente | 23:54
+Do you always want to do so if you're doing a rollback in this case with a feature flag as well? Do you always want to roll back the database changes you were talking about and kill that flag simultaneously?
+Aaron Newcombe | 23:54
+Do you always want to do so? If you're doing a rollback in this case with a feature flag as well, do you always want to roll back the database changes you were talking about and kill that flag simultaneously?
+Roderick Clemente | 24:04
+Or do you do those?
+Aaron Newcombe | 24:04
+Or do you do those?
+Roderick Clemente | 24:06
+No, you know what?
+Right. So in this situation, we decided to do that. But I can certainly make this database rollback conditional, and in that case you can have a... The dev includes a tag to say is this required or not? Ideally, and in this case, we've set this so that the flag is okay, we can just do that. That'll be enough. We don't have to undo the database changes, so we give you the flexibility that that's a choice.
+It's a great quick point to... So no, in this case I'm choosing to...
+Aaron Newcombe | 24:33
+Interesting, right?
+Roderick Clemente | 24:34
+But you can define what makes sense for your use case there, right? And this all looks pretty easy to put together.
+Aaron Newcombe | 24:38
+This all looks pretty easy to put together. I mean, this pipeline.
+Roderick Clemente | 24:41
+I mean, this pipeline.
+Aaron Newcombe | 24:42
+You make it look easy, of course, but is it really this easy to put this stuff together in the products, this whole pipeline, and the rollbacks?
+Roderick Clemente | 24:42
+You make it look easy, of course, but is it really this easy to put this stuff together in the products, this whole pipeline, and the rollbacks?
+Aaron Newcombe | 24:50
+I mean, is it cumbersome?
+Roderick Clemente | 24:50
+I mean, is it cumbersome? Or is it?
+Aaron Newcombe | 24:51
+Or is it? How difficult would it be?
+Roderick Clemente | 24:52
+How difficult would it be without the tool?
+Aaron Newcombe | 24:53
+Without the tool, I guess.
+Roderick Clemente | 24:54
+Now it's really straightforward, right?
+So you can define what those changes look like from the data perspective. Again, this actually is designed to make things a lot easier for the developer, especially in large, complex enterprises, right? A lot of places you're not going to be able to go and make changes in production yourself, right?
+So you're going to have to work with different teams, and that can be very burdensome. So using a tool like this, I think, makes things a lot easier. It's easier for those central DevOps teams to drive standards. I feel like the database is the last frontier for DevOps of really bringing it into the fold.
+Aaron Newcombe | 25:33
+Right. Right.
+Roderick Clemente | 25:33
+Right.
+Aaron Newcombe | 25:34
+Because I'm assuming we could use our policies, for example, that are in the product to enforce some of these things, make these more scalable, make the whole thing more scalable, and
+Roderick Clemente | 25:34
+Because I'm assuming we could use our policies, for example, that are in the product to enforce some of these things, make these more scaled, make the whole thing more scalable, make sure we don't have any crazy naming schemes out there that people are using.
+Aaron Newcombe | 25:42
+Make sure we don't have any crazy naming schemes out there that people are using.
+I mean, we could use policies to drive some of those standards, too, right?
+Roderick Clemente | 25:46
+I mean, we could use policies to drive some of those standards to right, exactly. Exactly, right, we can codify what the policies are, and that makes the DBAs feel comfortable that they don't need to be in the critical path.
+I've talked to a lot of DBAs, and they're the ones on the last line because they're the ones who are driving those changes and pushing it out there, and they're stuck babysitting releases, right? By plugging this into your observability tools and your experimentation data, you're in a much better position to do that. Let me show you a little bit, actually, about what that would look like here.
+So you can see I've got this rewards rollout experiment, right? So I'm running things like experiments, and these are things that we can define. I showed you before what our standard experiments are. Obviously, there might be those snowflake features, and this might be wanting to rate where we're going to have certain changes that we really want to run like special experiments.
+But we can define in general what our standard experiments are and attach those and run them, right? So you can see here we have the total latency.
+Aaron Newcombe | 26:48
+And we lost you again.
+Roderick Clemente | 26:48
+And we lost you again. Okay.
+Aaron Newcombe | 26:51
+I'm just going to keep letting you know when you...
+Roderick Clemente | 26:51
+I'm just going to keep letting you know when you...
+Aaron Newcombe | 26:53
+When you...
+Roderick Clemente | 26:53
+When you your screen disappears about to redo it.
+Aaron Newcombe | 26:54
+Your screen disappears. If about to redo it.
+Roderick Clemente | 26:56
+No worries, I have requested this.
+All right, can you see my beautiful experimentation data? We're back now.
+Aaron Newcombe | 27:07
+We're back now, yet.
+Roderick Clemente | 27:08
+Yeah, cool, right? So again, I'm mixing in here because our feature management is full stack, right? It really allows you to capture more than just the cosmetic and the business-level stats. We can actually grab things like, you know, in this case, the query level latency and the errors, right?
+And what's really important about that is we can target those. So if I drill into those errors, for example, right? And I can see. Okay, hey, this looks kind of reasonable. We know that there was about a 20 30% error rate right here.
+If I segregate this by, say, device, for example, I can look here and I can say, well, actually, hold on, iOS got it right. They're super healthy. But I'm looking here at the Desktop Edge and especially these Chromium and Android devices, you know, they seem to be the ones that are having this issue, right?
+And so now it becomes a business decision in this situation. You know, I probably just want to, you know, play it safe and turn it off for everyone, right? Just because I don't want to, you know, introduce that bad experience to my users.
+But you know, if this is really important and the business is very happy with kind of the impact on, you know, their key metrics. Maybe the answer is no. We're going to leave this on for the iOS users. We're going to target it at the users we know can provide a better experience and turn it on for them. We're going to just turn it on for these off for these Android users because, you know, we think the issue is localized in our Android code, right?
+Right, so right.
+Aaron Newcombe | 28:40
+Right. Right. And that's the key here, right?
+Roderick Clemente | 28:40
+And that's the key here, right?
+Aaron Newcombe | 28:42
+That's where these two things come together.
+Roderick Clemente | 28:42
+That's where these two things come together. You can do things like that where you just turn it off for an individual segment.
+Aaron Newcombe | 28:44
+You can do things like that where you just turn it off for an individual segment. It could be a region, it could be, you know, whatever that you're looking at that you want to measure that you know you want to segment by.
+Roderick Clemente | 28:49
+It could be a region. It could be whatever that you're looking at that you want to measure, that you want to segment by, and then you can start turning off the feature flag just for that particular region or user base.
+Aaron Newcombe | 28:57
+And then you can start turning off the feature flag just for that particular region or user base that you may want to go back to.
+Roderick Clemente | 29:02
+Exactly. You want to go back to the old way of doing things.
+Aaron Newcombe | 29:03
+The old. The old way of doing things.
+Roderick Clemente | 29:05
+Exactly, right? The key thing in this case, I guess it would be the old schema.
+Aaron Newcombe | 29:07
+In this case, I guess it would be the old schema.
+Roderick Clemente | 29:09
+Yeah, and again, the key, it may be related to that database query that we've changed and the updates, and it may be something at the code level, right? Or as we saw before, maybe, as you mentioned, maybe it's environmental, right?
+Maybe there's something different in our international environments than our US environments, and that's why it started misbehaving. So to your point, I can leave this on for the US users then maybe US web and iOS, and I'm turning it off just for Android users, right?
+Because it's important to the business. We want it out now, we'll fix it for Android, but iOS is honestly our largest and highest paying segment. So leave it on for them and get that benefit. Either way, we've been able to roll this out safely in production, turn it off when it's misbehaving, gather that data so now we can go and build it right.
+If we've missed something, that's awesome.
+Aaron Newcombe | 29:58
+That's awesome.
+Roderick Clemente | 29:59
+That's awesome.
+Aaron Newcombe | 30:00
+Well, we're running short on time.
+Roderick Clemente | 30:00
+Well, we're running short on time.
+Aaron Newcombe | 30:02
+I do want to quickly cover these other two use cases.
+Roderick Clemente | 30:02
+I do want to quickly cover these other two use cases.
+Aaron Newcombe | 30:04
+Anything else we need to see here in the demo?
+Roderick Clemente | 30:04
+Anything else we need to see here in the DAL room?
+Aaron Newcombe | 30:06
+Rud.
+Roderick Clemente | 30:07
+Yeah, I guess the one thing that I'll just touch on. Recently I mentioned that we help with a database migration.
+So one of the ways you can do it is what I'm showing you right here. So this is for the database migration you saw earlier. I had testing lined up for both SQL and PostgreSQL, and the reason is because I have a flag that was actually controlling that database migration.
+So when it was off, it was the legacy SQL light, right? Then instead of just turning it directly on, as you mentioned, we needed to make sure that we had trust in the system and the transactions lined up identically. We started with the old and confirmed, and in this case, SQL light what we know, what we trust was the primary.
+But we were actually mirroring those rights to PostgreSQL, and then we were doing a data integration job like doing external confirmation to make sure that they were identical. Once we confirmed that over a multi-week period, we flipped it to new and confirmed.
+In this case, we're again mirroring those rights. But now PostgreSQL is our primary, right? Once we've run in this scenario for another few weeks, we've built the confidence we can turn it on fully PostgreSQL only, and we can retire that SQL light database.
+So I'll close off with that. Then I actually... There's a question that came in, and it's probably a good time to ask it.
+Aaron Newcombe | 31:17
+Cool. That actually is a question that came in, and this is probably a good time to ask it.
+Roderick Clemente | 31:22
+It is. What databases do you currently support for this kind of stuff?
+Aaron Newcombe | 31:22
+It is. What databases do you currently support for this kind of stuff?
+Roderick Clemente | 31:28
+Great question. Give me what?
+Aaron Newcombe | 31:31
+A lot of them is the answer.
+Roderick Clemente | 31:31
+A lot of them is the...
+Yeah. Know the answer is a lot.
+Aaron Newcombe | 31:36
+We're not actually... The other thing I'll say while you're looking that up, this isn't something that we actually are... We're not actually doing the migration right here.
+Roderick Clemente | 31:36
+We're not actually... The other thing I'll say while you're looking at this isn't something that we actually are... We're not actually doing the migration right here.
+Aaron Newcombe | 31:46
+It's more like we're controlling the access.
+Roderick Clemente | 31:46
+It's more like we're controlling the access. That's right, that's exactly right.
+Aaron Newcombe | 31:49
+In a particular example.
+Roderick Clemente | 31:50
+Yep, yeah, exactly.
+Aaron Newcombe | 31:51
+Okay.
+Roderick Clemente | 31:51
+We're basically making... We're not doing the migration itself, right? We're working with whatever tool that you're using for your data integration and that thing... This is at the application side. Making sure that you have zero downtime while you're doing an inherently risky change like switching databases is a very risky thing.
+So we're helping you derisk that release.
+Aaron Newcombe | 32:13
+Yeah.
+Roderick Clemente | 32:13
+Okay, here's the support that I have for DB DevOps is Oracle MS SQL Postgress SQL Mongo DB Azure SQL am I Azure SQL Azure DB for Postgress and then roadmap is a uabyte Terra data big query and I don't know Jesse, if you're watching you can feel free to [Laughter] let me know if I missed.
+Aaron Newcombe | 32:37
+Many more, but the answer... So all of those and it's all documented in our wonderful documentation as well.
+Roderick Clemente | 32:39
+So all of those and it's all documented in our wonderful documentation as well.
+Aaron Newcombe | 32:45
+I would be remiss if I didn't say that you meant we're looking at those experiments you were running.
+Roderick Clemente | 32:45
+I would be remiss if I didn't say that you meant we're looking at those experiments you were running. We offer warehouse native experimentation for those people running Snowflake bigQuery.
+Aaron Newcombe | 32:50
+We offer warehouse native experimentation for those people running Snowflake bigQuery.
+Roderick Clemente | 32:57
+All the other ones or most of the other ones.
+Aaron Newcombe | 32:58
+All the other ones or most of the other ones.
+Roderick Clemente | 32:59
+We're adding more, and it seems like every day.
+Aaron Newcombe | 32:59
+We're adding more, it seems like every day.
+But if you wanted to plug in those experiments directly into your data warehouse so you don't need to do ETL because you've got sensitive data, maybe there that you know if any DBAs and security folks on the call will know they don't want to share access to that stuff.
+Roderick Clemente | 33:01
+But if you wanted to plug in those experiments directly into your data warehouse so you don't need to do ETL because you've got sensitive data, maybe there that you know if any DBAs and security folks on the call will know they don't want to share access to that stuff.
+Yeah.
+Aaron Newcombe | 33:15
+So you can plug directly into the data warehouse and run your experiments there on that data and then export the results back to our platform.
+Roderick Clemente | 33:16
+So you can plug directly into the data warehouse and run your experiments there on that data and then export the results back to our platform. So you can see that view that you were showing before about how things were running and how those individual segments were doing, etc.
+Aaron Newcombe | 33:24
+So you can see that view that you were showing before about how things were running and how those individual segments were doing, etc.
+Roderick Clemente | 33:32
+Yes, exactly.
+You can go in as you're looking to go and try. I know the last one we talked about briefly was optimizing queries, right? It's a big difference between what they do in the lab in your QA environment than how they're going to perform with real traffic and real data.
+Aaron Newcombe | 33:47
+Yeah.
+Roderick Clemente | 33:47
+So we allow you to do this in a very safe way. You can go and run those experiments, see the results with real traffic and decide what optimization is best. If there are any issues, you can very quickly throw a flag or automatically roll that back.
+So cool.
+Aaron Newcombe | 34:02
+Cool.
+Roderick Clemente | 34:02
+Cool.
+Aaron Newcombe | 34:03
+All right, well, I think we can go back to the slides.
+Roderick Clemente | 34:03
+All right, well, I think we can go back to the slides.
+Aaron Newcombe | 34:05
+I do just want to touch on those other two use cases that we talked about.
+Roderick Clemente | 34:05
+I do just want to touch on those other two use cases that we talked about. So let's just skip past the live demo and get into query optimization and index rollouts.
+Aaron Newcombe | 34:09
+So let's skip past the live demo and get into query optimization and index rollouts.
+Then I know we already covered the database migration, so maybe it's just this one that we need to talk about.
+Roderick Clemente | 34:16
+Then I know we already covered the database migration, so maybe it's just this one that we talk about.
+Aaron Newcombe | 34:21
+How would you use feature flags if you wanted to do query optimization and index rollouts?
+Roderick Clemente | 34:21
+How would you use feature flags if you wanted to do query optimization and index rollouts?
+Aaron Newcombe | 34:27
+Right?
+Roderick Clemente | 34:27
+Run.
+Yeah, that's just what I was alluding to before I showed you the experimentation there. We were grabbing some light things like transaction time. That didn't seem to be the culprit that forced us to roll back.
+But the nice thing is we make it very simple for you to, in real-world scenarios, split the traffic segment to a small type of users, target a specific type of users, and then go and run a rollout, say 50/50, for users in Austin or users in the Middle East. Let's test them. Let's make sure that see how this behaves.
+And again, instead of it being, the highest paid opinion in the room, you get like, hypothesis driven development.
+Aaron Newcombe | 35:07
+Yeah, it seems like this would be super important these days in the world of...
+Roderick Clemente | 35:07
+Yeah, it seems like this would be super important these days in the world of... I'm asking, right?
+Aaron Newcombe | 35:11
+I'm asking my LM how can I improve this query or something like that.
+Roderick Clemente | 35:12
+And how can I improve this career or something like that?
+Aaron Newcombe | 35:15
+And then I need to go test that, right?
+Roderick Clemente | 35:15
+And then I need to go test that, right?
+Aaron Newcombe | 35:17
+Somehow I can't test that because I don't have production traffic coming in.
+Roderick Clemente | 35:17
+Somehow I can't test it because I don't have production traffic coming in.
+Aaron Newcombe | 35:21
+That pattern is different in dev and QA. I don't really have anything right now, so I need to be able to do this in prod, and so I stick that behind a feature flag and Bob's your uncle, right?
+Roderick Clemente | 35:21
+That pattern is different in dev and QA. I don't really have anything right now, so I need to be able to do this in prod.
+So I stick that behind a feature flag. Bob's your uncle, right? Yes, exactly. Right. It's whether it's a human or it's an AI-assisted human or just a complete agent, right? There's nothing quite like hitting reality and getting real-world data back to decide if this is a good idea or if this is a hallucination.
+Yeah, awesome.
+Aaron Newcombe | 35:52
+Yeah, awesome. Love it.
+Roderick Clemente | 35:54
+Love it.
+Aaron Newcombe | 35:55
+All right, so we talked about database migration, so I'm going to go ahead and skip past that unless there's anything here that we didn't cover that you want to cover.
+Roderick Clemente | 35:55
+All right, so we talked about database migration, so I'm going to go ahead and skip past that unless there's anything here that we didn't cover that you want to cover. No, I think this is yeah, we went through those two, the one that we cover and obviously there's the ETL piece.
+And like, how are you confirming that data? And that's going to be done in whatever kind of di I tool you're using today, right?
+Aaron Newcombe | 36:14
+Right.
+Roderick Clemente | 36:15
+Right. Cool.
+Aaron Newcombe | 36:15
+Cool. Alright, so just to wrap up a few takeaways here, if you're not using feature flags, if you're a DBA or on a database team, or maybe you're a DevOps person that deals mostly with the database team, you're not using feature flags today.
+Roderick Clemente | 36:17
+All right, so just kind of to wrap up a few takeaways here, if you're not using feature flags, if you're a DBA or on a database team, or maybe you're a DevOps person that deals mostly with the database team, you're not using Future FLA today.
+Aaron Newcombe | 36:32
+You really should because it gives you that freedom that you need to have that instant kill switch or to redirect traffic from one query to another.
+Roderick Clemente | 36:32
+You really should because it gives you that freedom that you need to have that instant kill switch or to redirect traffic from one query to another. All of these cases, we just saw many more.
+Aaron Newcombe | 36:40
+All the use cases we just saw and many more.
+I think it's something that a lot of folks haven't thought about really until recently in terms of doing database migrations or redirecting traffic without having to worry about having to do a full rollback and get back to that known good thing.
+Roderick Clemente | 36:42
+I think it's something that a lot of folks haven't thought about really until recently in terms of doing database migrations or redirecting traffic without having to worry about having to do a full rollback and get back to that known good thing. You can actually just flip the switch, turn off that traffic flow, or go back to the old query, whatever it might be.
+Aaron Newcombe | 36:59
+You can actually just flip the switch, turn off that traffic flow, or go back to the old query, whatever it might be.
+It's going to save you a lot of time, and it's going to save you a lot of headache, especially when you're getting deluged with changes coming from AI-driven code that you have to implement and make sure work and aren't going to break things, so it could be really super useful.
+Roderick Clemente | 37:06
+It's going to save you a lot of time and it's going to save you a lot of headache, especially when you're getting deluged with changes coming from AI-driven code that you have to implement and make sure work and aren't going to break things, so it could be really super useful. I hope you want to investigate more.
+Aaron Newcombe | 37:20
+I hope you want to investigate more. Yes.
+Roderick Clemente | 37:26
+Yeah, we just talked about all these things without showing the slide.
+Aaron Newcombe | 37:26
+We just talked about all these things without showing the slide.
+Roderick Clemente | 37:28
+But yep, this is what you get with one thing I would...
+Aaron Newcombe | 37:28
+But yep. This is what you get with feature management and experimentation. Yeah, go ahead.
+Roderick Clemente | 37:32
+One thing I would highlight. If you go back one slide to the...
+Yeah, one thing I would highlight here, which might not have been super obvious for all of our DBA friends, is the targeting and the power of targeting.
+Right? So I have some customers who will put flags around their logs, for example. And then you can turn on that high-fidelity debug-level logging and not blow out your Splunk bill or whatever that is.
+So it really does allow you to be precise with who sees what changes, and it was very handy for troubleshooting.
+Aaron Newcombe | 38:08
+Yeah, that's more like the functional use case.
+Roderick Clemente | 38:08
+Yeah, that's more like the functional use case. There are a lot of functional use cases as well as testing use cases as well as rollout use cases.
+Aaron Newcombe | 38:11
+There are a lot of functional use cases as well as testing use cases as well as rollout cases. There are a lot of different ways to use feature flags.
+Roderick Clemente | 38:16
+There are a lot of different ways to use feature flags.
+I think that people don't always understand.
+Aaron Newcombe | 38:18
+I think that people don't always understand.
+Roderick Clemente | 38:21
+We have customers doing all of those things and many more, and we're always learning from them, and that's what we're sharing with you all today.
+Aaron Newcombe | 38:21
+We have customers doing all of those things and many more, and we're always learning from them, and that's what we're sharing with you all today.
+Roderick Clemente | 38:27
+So I appreciate that one.
+Aaron Newcombe | 38:27
+So I appreciate that one. Let's go on.
+Roderick Clemente | 38:31
+Let's go on database devo up.
+Aaron Newcombe | 38:32
+Database. Devop.
+Roderick Clemente | 38:33
+So, anything to say here in terms of ramp-ups for database deployments run?
+Aaron Newcombe | 38:33
+So, anything to say here in terms of wrap-ups for database deployments run?
+Roderick Clemente | 38:39
+Yeah, I just think the key thing to note, as well as a common question that we don't have listed here, is that we support both Liquid Base and Flyway for those changes.
+Right? This is the last frontier, right? Allowing your automation and DevOps best practices like bringing that to the database world. So that's where our database DevOps comes in and plays.
+As you can see from today, one plus one equals five. When you're putting together multiple of these modules, it unlocks additional capabilities. Yeah.
+Aaron Newcombe | 39:13
+Yeah. And this is not the time with AI coming on board to be doing any of this stuff by hand.
+Roderick Clemente | 39:13
+This is not the time with AI coming on board to be doing any of this stuff by hand.
+Aaron Newcombe | 39:22
+The old DIY method is going to fail and going to break.
+Roderick Clemente | 39:22
+The old DIY method is going to fail and break.
+So having a tool like DB debops that can help you orchestrate these things, provide visibility, the right teams, and make sure that governance is in place.
+Aaron Newcombe | 39:26
+So having a tool like DB debops that can help you orchestrate these things, provide visibility, the right teams, and make sure that governance is in place.
+Roderick Clemente | 39:35
+Those policies we talked about before, for example, making sure all that is in place is why you need a tool like this.
+Aaron Newcombe | 39:35
+Those policies we talked about before, for example, making sure all that is in place is why you need a tool like this.
+Roderick Clemente | 39:41
+I think it's the value that our customers get out of it.
+Aaron Newcombe | 39:41
+It's the value that our customers get out of it.
+Roderick Clemente | 39:45
+I think we've all seen the memes and the Twitter things of, "My god, wait, why did you delete my database of customer data?" It was like, "You're right."
+Aaron Newcombe | 39:52
+Yeah, it's too late.
+Roderick Clemente | 39:53
+You told me not to touch it, and I did it and I ignored it, right?
+So again, there's a lot of power unlocked by these LLMs, but you want to have strict governance policy in place, code lined up here so all of the oopsies and shooting yourself in the foot can be avoided, right?
+I think large enterprises have these policies already baked in by default because they've been dealing with lots of humans for a long time.
+Aaron Newcombe | 40:13
+That's right.
+Roderick Clemente | 40:21
+So they understand change management, right? I think that even smaller organizations, you've got, you know, only ten devs, but you've got hundreds of agents going in there are starting to realize the value of orchestrating these changes in an orderly manner.
+That's right. That's right.
+Aaron Newcombe | 40:40
+So just a few resources before we wrap up here that I want to share with you if you're interested in feature flags.
+Roderick Clemente | 40:40
+So just a few resources before we wrap up here that I want to share with you if you're interested in feature flags. Why should I use them?
+Aaron Newcombe | 40:46
+And why should I use them? And what's the impact of AI generated code on my releases?
+Roderick Clemente | 40:47
+What's the impact of AI-generated code on my releases?
+Aaron Newcombe | 40:50
+And how do we solve for that?
+Roderick Clemente | 40:50
+And how do we solve for that?
+Aaron Newcombe | 40:52
+There are a couple of things here that I would point out to check out.
+Roderick Clemente | 40:52
+There's a couple of things here that I would point out to check out. One is another webinar that we did, I forget when a while ago, but it was all about kind of explaining this problem and how to solve for it the future flags of hey, I'm getting all these changes.
+Aaron Newcombe | 40:54
+One is another webinar that we did I forget when a while ago, but it was all about kind of explaining this problem and how to solve for it with future flags of hey, I'm getting all these changes.
+Roderick Clemente | 41:06
+I have like five times or ten times or twenty times the amount of features I'm releasing in every deployment.
+Aaron Newcombe | 41:06
+I have like five times or ten times or twenty times the amount of features I'm releasing in every deployment.
+Roderick Clemente | 41:12
+How do I make sure that is going off without a hitch?
+Aaron Newcombe | 41:12
+How do I make sure that is going off without a hitch? And we show you some examples of that, as well as a new report, 2026 State of AI-Driven Software Releases, where we talk about, "Hey, are you deploying?"
+Roderick Clemente | 41:15
+We can show you some examples of that, as well as a new report, 2026 State of AI-Driven Software Releases, where we talk about, "Hey, are you deploying?"
+Aaron Newcombe | 41:27
+How is your governance working?
+Roderick Clemente | 41:27
+How is your governance working?
+Aaron Newcombe | 41:28
+Are you doing manual checks?
+Roderick Clemente | 41:28
+Are you doing manual checks?
+Aaron Newcombe | 41:30
+There are all kinds of things that we asked devs to comment on in terms of how they were being impacted with all these changes.
+Roderick Clemente | 41:30
+There are all kinds of things that we asked devs to comment on in terms of how they were being impacted with all these changes, and you can find that in that report that's linked there.
+Aaron Newcombe | 41:39
+You can find that in that report that's linked there. These will be available for you in the resources.
+Roderick Clemente | 41:42
+These will be available for you in the resources.
+Aaron Newcombe | 41:44
+They'll be sent to you if you get a copy of the presentation.
+Roderick Clemente | 41:44
+They'll be sent to you if you get a copy of the presentation.
+Aaron Newcombe | 41:47
+These are clickable in the presentation, so you'll be able to click on those and get access to those.
+Roderick Clemente | 41:47
+These are clickable in the presentation, so you'll be able to click on those and get access to those.
+Yeah, I think it's worth checking those out. I would say that all of the experimentation benefits we showed applied to databases are doubly triply true with AI because you can have, again, multivaried experimentation.
+So you can say, "Okay, hey, this model costs three times as much." It increases our key, you know, KPIs, but only about like 10%. So maybe good enough is good enough, right? And so it allows you to present that data to the business and make it a business decision, right?
+Aaron Newcombe | 42:16
+Yeah, right.
+Roderick Clemente | 42:21
+Right.
+Aaron Newcombe | 42:21
+On the database side, here are a couple of resources for you too.
+Roderick Clemente | 42:21
+On the database side, here are a couple of resources for you too.
+Aaron Newcombe | 42:25
+You know, especially the infrastructure code.
+Roderick Clemente | 42:25
+You know, especially the infrastructure code infrastructure is code isn't enough for databases.
+Aaron Newcombe | 42:27
+Infrastructure code isn't enough for databases. Infrastructure code isn't enough for databases. It may be worth a watch if you're thinking about... I think maybe people on the database side know that that's true already.
+Roderick Clemente | 42:29
+It may be worth a watch if you're thinking about...
+I think maybe people on the database side know that that's true already.
+Aaron Newcombe | 42:37
+But if you want to figure out how to deal with that problem, then highly recommend going through and clicking on these resources as well so you can learn a little bit more about how we approach these problems.
+Roderick Clemente | 42:37
+But if you want to figure out how to deal with that problem, then highly recommend going through and clicking on these resources as well so you can learn a little bit more about how we approach these problems.
+Aaron Newcombe | 42:48
+It's not about just selling you the stuff.
+Roderick Clemente | 42:48
+It's not about just selling you the stuff.
+Aaron Newcombe | 42:50
+Right?
+Roderick Clemente | 42:50
+Right?
+Aaron Newcombe | 42:50
+If we're not solving the problem, then we're not doing our job, and that's what these resources are good for.
+Roderick Clemente | 42:50
+If we're not solving the problem, then we're not doing our job. That's what the resources are good for. Exactly. This is worth checking out too. We alluded to it briefly in the demo today when you saw that standard pipeline spinning up infrastructure, but being able to spin everything up as well as manage those database changes, link in the feature level changes, and then experimentation data on top of it.
+That's... I think... Is... A...
+Aaron Newcombe | 43:19
+Yep. There's a link down below in the platform.
+Roderick Clemente | 43:21
+There's a link down below in the platform. If you wanted to sign up for the platform, you can sign up for free and use basically any of the modules, but I think the link that's on the screen there will take you to...
+Aaron Newcombe | 43:24
+If you wanted to sign up for the platform, you can sign up for free and use basically any of the modules. But I think the link that's on the screen there will take you to... Or you can use a little QR code here to get directly to either a demo or either harness.
+Roderick Clemente | 43:35
+Or you can use a little QQR code here to get directly to either a demo or either harness we call it fme feature management and experimentation feature flags.
+Aaron Newcombe | 43:42
+We call it FME Feature management and Experimentation. Feature flags or to DB DevOps.
+Roderick Clemente | 43:45
+Or to DB DevOps.
+Aaron Newcombe | 43:47
+If you want to get a demo there, go ahead take a picture.
+Roderick Clemente | 43:47
+If you want to get a demo there, go ahead take a picture.
+Aaron Newcombe | 43:51
+Now is the time to take a picture or refer to the slides when they get sent out.
+Roderick Clemente | 43:51
+Now is the time to take a picture or refer to the slides when they get sent out and sign up for a demo.
+Aaron Newcombe | 43:54
+You can sign up for a demo. That's the best way because then we can ask you in advance.
+Roderick Clemente | 43:56
+That's the best way because then we can ask in advance what you are doing.
+Aaron Newcombe | 43:58
+Hey, what are you doing?
+Roderick Clemente | 43:59
+What do you want to see?
+Aaron Newcombe | 43:59
+What do you want to see?
+Roderick Clemente | 44:00
+We'll get it set up and show you how to solve a particular problem in your environment rather than just hearing us talk about it.
+Aaron Newcombe | 44:00
+We'll get it set up and show you how to solve a particular problem in your environment rather than just hearing us talk about it.
+Right?
+Roderick Clemente | 44:07
+Because everybody's environment is a bit different.
+Aaron Newcombe | 44:07
+Because everybody's environment is a bit different.
+Roderick Clemente | 44:10
+Exactly. Exactly. We'd love to kind of take what I showed you today and customize it to show you how we can help you with your stickiest releases.
+Aaron Newcombe | 44:18
+Yeah.
+Roderick Clemente | 44:18
+Yeah.
+Aaron Newcombe | 44:18
+What would this look like with this database or what would this look like with this problem?
+Roderick Clemente | 44:18
+What would this look like with this database or what would this look like with this problem?
+Aaron Newcombe | 44:22
+That really helps us be able to tailor these things to answer particular questions for you.
+Roderick Clemente | 44:22
+That really helps us be able to tailor these things to answer particular questions for you.
+So, yeah, I think we're actually about out of time.
+Aaron Newcombe | 44:29
+So yeah, I think we're actually about out of time.
+I know we answered one of the questions.
+Roderick Clemente | 44:31
+I know we answered one of the questions.
+Aaron Newcombe | 44:32
+If there are questions that we didn't get to, we will be following up and answering those with you directly.
+Roderick Clemente | 44:32
+If there are questions that we didn't get to, we will be following up and answering those with you directly.
+So don't worry, your question will be answered.
+Aaron Newcombe | 44:38
+So don't worry, your question will be answered. And we appreciate you putting those questions in the platform.
+Roderick Clemente | 44:40
+We appreciate you putting those questions in the platform.
+Aaron Newcombe | 44:43
+But yeah, I think that's about it for us today.
+Roderick Clemente | 44:43
+But yeah, I think that's about it for us today. So Ron, thank you very much for doing that great demo.
+Aaron Newcombe | 44:46
+So Ron, thank you very much for doing that great demo.
+Roderick Clemente | 44:49
+Thank you for having us.
+Yeah, looking forward to speaking with you all. Feel free to reach out and schedule some time with us. We love to go deeper with anyone who's interested, and we'll wrap it up there.
+Aaron Newcombe | 44:58
+Yep, and we'll wrap it up there.
+Roderick Clemente | 45:00
+Thanks, everybody. Have a great day.
+Aaron Newcombe | 45:00
+Thanks, everybody. Have a great day.
+Roderick Clemente | 45:02
+Bye.
+Speaker 2 | 45:08
+All right, we're done streaming, great job.
+Roderick Clemente | 45:08
+All right, we're done streaming, great job. All right. Wow, I don't know why it kept dropping me off of the sharing. That was going to be my first for you.
+Speaker 2 | 45:16
+That was going to be my first question for you.
+Roderick Clemente | 45:21
+Was it giving you any notification on my end?
+Speaker 2 | 45:21
+Wasn't giving you any notification on my end.
+Roderick Clemente | 45:23
+It just looked like you stopped sharing.
+Speaker 2 | 45:23
+It just looked like you stopped sharing.
+Roderick Clemente | 45:25
+Yeah.
+Speaker 2 | 45:25
+Yeah.
+Roderick Clemente | 45:25
+No, I just... It wasn't until I looked up there on the stage because I had that up to the right out of the way. I could see when my stuff was live. But otherwise, if I was just focused on my screen, there was no notice.
+So I don't know.
+Speaker 2 | 45:39
+Well, what we do...
+Roderick Clemente | 45:40
+Yeah, because I definitely want your team to have a great piece of content that they can use so we can prepare the first draft of the polished MP4.
+Speaker 2 | 45:41
+Because I definitely want your team to have a great piece of content that they can use so we can prepare the first draft of the polished MP4.
+Roderick Clemente | 45:50
+You know, we'll cut out the countdown.
+Speaker 2 | 45:50
+You know, we'll cut out, the countdown.
+Roderick Clemente | 45:54
+We'll see.
+Speaker 2 | 45:54
+We'll see, you know, what we can if we can freeze your frame and, you know, like freeze your screen and extend.
+Roderick Clemente | 45:55
+We'll see what we can do if we can freeze your frame and freeze your screen and extend.
+Speaker 2 | 46:01
+See what we can do there.
+Roderick Clemente | 46:01
+See what we can do there.
+Speaker 2 | 46:03
+And then if there's any place where you.
+Roderick Clemente | 46:03
+Okay? And if there's any place where you.
+Speaker 2 | 46:06
+I think towards the beginning especially, we'll need to maybe insert a screen share from you.
+Roderick Clemente | 46:06
+I think I can. We'll need to insert a screen share from you. I'm happy to jump on
+and record if you like them. Yeah, but I think...
+Speaker 2 | 46:15
+Yeah, but I think... You might even be able to do it on your own time.
+Roderick Clemente | 46:15
+You might even be able to do it on your own time. Yeah, a screen recording from your own computer.
+Speaker 2 | 46:19
+A screen recording from your own computer.
+Roderick Clemente | 46:21
+But we'll send that first draft over and then we can look and I'll say, "Hey, these are the pieces that I think would be best if we just redid, re-recorded a screen."
+Speaker 2 | 46:21
+But we'll send that first draft over and then we can look and I'll say, "Hey, these are the pieces that I think would be best if we just redid, re-recorded a screen."
+Roderick Clemente | 46:30
+Okay, thank you so much. I have to run. I'll talk to you soon.
+Aaron Newcombe | 46:32
+Yeah, thanks, Rog.
+Roderick Clemente | 46:33
+Bye, thanks by.
+Aaron Newcombe | 46:34
+Yeah.
+Roderick Clemente | 46:34
+Yeah, Neal, I think that would be great if we could go.
+Aaron Newcombe | 46:34
+Neal, I think that would be great if we could go.
+Roderick Clemente | 46:37
+Hello.

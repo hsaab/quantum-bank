@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Quantum Bank</title>
+    <link rel="stylesheet" href="./static/css/simple.css">
+    <style>
+        .pricing-section {
+            padding: 40px 20px;
+            background: #fff;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        .pricing-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        .pricing-table th {
+            background: #857589;
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+        }
+        .pricing-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .pricing-table tr:hover {
+            background: #f9f9f9;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .plan-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body data-variant="old_home" data-testid="pricing-variant-old">
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/login" data-testid="nav-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Pricing Plans</h1>
+            <p>Choose the plan that works best for you</p>
+        </section>
+
+        <section class="pricing-section">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Price</th>
+                        <th>Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="plan-name">Basic</td>
+                        <td class="price">$0/month</td>
+                        <td>Free checking, Debit card, Mobile app, Online banking</td>
+                    </tr>
+                    <tr>
+                        <td class="plan-name">Plus</td>
+                        <td class="price">$10/month</td>
+                        <td>Everything in Basic, Savings account, Investment accounts, Free transfers</td>
+                    </tr>
+                    <tr>
+                        <td class="plan-name">Premium</td>
+                        <td class="price">$25/month</td>
+                        <td>Everything in Plus, Financial advisor, Priority support, Unlimited accounts</td>
+                    </tr>
+                    <tr>
+                        <td class="plan-name">Private</td>
+                        <td class="price">$100/month</td>
+                        <td>Everything in Premium, Private banker, Wealth management, 24/7 support</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section style="text-align: center; padding: 40px 20px;">
+            <h2>Get Started Today</h2>
+            <p>Sign up for an account and start banking with us</p>
+            <a href="/login" class="cta-button" data-testid="pricing-cta">Sign Up Now</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026. All rights reserved.</p>
+    </footer>
+</body>
+</html>

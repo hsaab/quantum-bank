@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Quantum Bank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/banking.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/dashboard" class="navbar-brand">Quantum Bank</a>
+            <ul class="navbar-nav">
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="/transactions" class="nav-link">Transactions</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Profile</h1>
+        <div class="account-card" style="cursor: default;">
+            <div style="margin-bottom: 1rem;">
+                <strong>Username:</strong> {{ profile.username }}
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <strong>Email:</strong> {{ profile.email }}
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <strong>Full Name:</strong> {{ profile.full_name }}
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <strong>Address:</strong> {{ profile.address }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

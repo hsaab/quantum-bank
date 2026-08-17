@@ -1,0 +1,12 @@
+# Gitleaks configuration for quantum-bank.
+# Extends the default ruleset; adds a narrowly-scoped allowlist for a reviewed
+# false positive.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Split.io client-side SDK key is public by design (ships in browser JS to authorize flag evaluation); it is not a server secret. The server-side SPLIT_API_KEY is env-loaded and never committed. Scoped to the specific key line + files so any other secret still trips."
+regexTarget = "line"
+regexes = ['''SPLIT_CLIENT_KEY\s*=\s*['"][A-Za-z0-9]{20,}['"]''']
+paths = ['''static/js/split-client\.js''', '''docs/TECHSUMMARY\.md''']

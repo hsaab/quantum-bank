@@ -1,0 +1,131 @@
+# Reference: rod-bank-pipeline (Harness inline). Org=sandbox, project=devX_super_team.
+# D8 dual-backend CI: Background postgres:16 + Test_SQLite (flag off) + Test_Postgres (flag on).
+# Keep in sync with Harness Studio (storeType=INLINE) when changing steps.
+
+pipeline:
+  name: rod-bank-pipeline
+  identifier: rodbankpipeline
+  projectIdentifier: devX_super_team
+  orgIdentifier: sandbox
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: quantumplatformdemo
+        repoName: quantum-bank
+        build: <+input>
+        sparseCheckout: []
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+          buildIntelligence:
+            enabled: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Background
+                  name: postgres
+                  identifier: postgres
+                  spec:
+                    image: postgres:16
+                    envVariables:
+                      POSTGRES_USER: postgres
+                      POSTGRES_PASSWORD: postgres
+                      POSTGRES_DB: quantum_bank
+                    portBindings:
+                      "5432": "5432"
+              - step:
+                  type: Run
+                  name: Lint
+                  identifier: Lint
+                  spec:
+                    shell: Sh
+                    command: |-
+                      # Pinned: floating versions silently red-light previously-green CI
+                      # when ruff/black ship stricter rules. Bump deliberately.
+                      pip install ruff==0.15.18 black==26.5.1
+                      ruff check .
+                      black --check .
+              - step:
+                  type: Test
+                  name: Test_SQLite
+                  identifier: Test_SQLite
+                  spec:
+                    shell: Sh
+                    envVariables:
+                      POSTGRES_DATABASE: "off"
+                    command: |-
+                      pip install -r requirements.txt
+                      unset DATABASE_URL
+                      pytest test/ -v --junit-xml=out_sqlite.xml
+                    reports:
+                      type: JUnit
+                      spec:
+                        paths:
+                          - out_sqlite.xml
+              - step:
+                  type: Test
+                  name: Test_Postgres
+                  identifier: Test_Postgres
+                  spec:
+                    shell: Sh
+                    envVariables:
+                      DATABASE_URL: "postgresql://postgres:postgres@127.0.0.1:5432/quantum_bank"
+                      POSTGRES_DATABASE: "on"
+                    command: |-
+                      pip install -r requirements.txt
+                      for i in $(seq 1 60); do
+                        python -c "import socket; socket.create_connection(('127.0.0.1', 5432), 2).close()" 2>/dev/null && break
+                        sleep 1
+                      done
+                      pytest test/test_a_models_bootstrap.py::test_database_schema_matches_expected_columns -v
+                      pytest test/ -v --junit-xml=out_postgres.xml
+                    reports:
+                      type: JUnit
+                      spec:
+                        paths:
+                          - out_postgres.xml
+              - stepGroup:
+                  name: SCA
+                  identifier: SCA
+                  steps:
+                    - parallel:
+                        - step:
+                            type: Owasp
+                            name: Owasp
+                            identifier: Owasp
+                            spec:
+                              mode: orchestration
+                              config: default
+                              target:
+                                type: repository
+                                detection: auto
+                              advanced:
+                                log:
+                                  level: info
+                        - step:
+                            type: OsvScanner
+                            name: OsvScanner
+                            identifier: OsvScanner
+                            spec:
+                              mode: orchestration
+                              config: default
+                              target:
+                                type: repository
+                                detection: auto
+                              advanced:
+                                log:
+                                  level: info

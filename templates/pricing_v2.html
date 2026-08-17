@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Quantum Bank</title>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./static/webfonts/unicons.css">
+  <link rel="stylesheet" href="./static/css/plugins.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/grape.css">
+  <style>
+    body {
+      background: #f0f0f8;
+    }
+    .pricing-hero {
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+    .pricing-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #343f52;
+      margin-bottom: 20px;
+    }
+    .pricing-hero p {
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-bottom: 40px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 0 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      position: relative;
+    }
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+    .pricing-card.featured {
+      border: 2px solid #605dba;
+      background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+    }
+    .pricing-card.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: #605dba;
+      color: #fff;
+      padding: 5px 40px;
+      font-size: 11px;
+      font-weight: 700;
+      transform: rotate(45deg);
+      letter-spacing: 1px;
+    }
+    .tier-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #343f52;
+      margin-bottom: 10px;
+    }
+    .tier-price {
+      font-size: 48px;
+      font-weight: 800;
+      color: #605dba;
+      margin-bottom: 10px;
+    }
+    .tier-price .currency {
+      font-size: 24px;
+    }
+    .tier-price .period {
+      font-size: 16px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .tier-description {
+      color: #6b7280;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    .features-list {
+      list-style: none;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    .features-list li {
+      padding: 12px 0;
+      color: #4b5563;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+    .features-list li::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .features-list li.not-included {
+      opacity: 0.4;
+      text-decoration: line-through;
+    }
+    .features-list li.not-included::before {
+      content: '×';
+      color: #ef4444;
+    }
+    .btn-pricing {
+      width: 100%;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-pricing-primary {
+      background: #605dba;
+      color: #fff;
+    }
+    .btn-pricing-primary:hover {
+      background: #4f4ca8;
+      transform: translateY(-2px);
+    }
+    .btn-pricing-outline {
+      border: 2px solid #605dba;
+      color: #605dba;
+      background: transparent;
+    }
+    .btn-pricing-outline:hover {
+      background: #605dba;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="!bg-[#f0f0f8]" data-variant="new_home" data-testid="pricing-variant-v2">
+  <div class="grow shrink-0">
+    <header class="!absolute w-full">
+      <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+        <div class="container xl:flex-row lg:flex-row !flex-nowrap items-center">
+          <div class="navbar-brand w-full">
+            <a href="/">
+              <img src="./static/images/NASDAQ_Logo.png" class="nav-logo" alt="image">
+            </a>
+          </div>
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div class="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link font-bold tracking-[-0.01rem] hover:!text-[#605dba]" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link font-bold tracking-[-0.01rem] hover:!text-[#605dba]" href="/pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link font-bold tracking-[-0.01rem] hover:!text-[#605dba]" href="/login" data-testid="nav-signin">Sign In</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="pricing-hero">
+      <div class="container">
+        <h1>Simple, Transparent Banking</h1>
+        <p>Choose the perfect account for your financial needs. No hidden fees, no surprises.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="pricing-grid">
+        <!-- Basic Tier -->
+        <div class="pricing-card">
+          <h3 class="tier-name">Basic</h3>
+          <div class="tier-price">
+            <span class="currency">$</span>0
+            <span class="period">/month</span>
+          </div>
+          <p class="tier-description">Perfect for everyday banking needs</p>
+
+          <ul class="features-list">
+            <li>Free checking account</li>
+            <li>Debit card included</li>
+            <li>Mobile banking app</li>
+            <li>Online bill pay</li>
+            <li>ATM access</li>
+            <li class="not-included">Savings account</li>
+            <li class="not-included">Investment accounts</li>
+            <li class="not-included">Priority support</li>
+          </ul>
+
+          <a href="/login" class="btn-pricing btn-pricing-outline">Get Started</a>
+        </div>
+
+        <!-- Plus Tier -->
+        <div class="pricing-card">
+          <h3 class="tier-name">Plus</h3>
+          <div class="tier-price">
+            <span class="currency">$</span>10
+            <span class="period">/month</span>
+          </div>
+          <p class="tier-description">Enhanced features for growing wealth</p>
+
+          <ul class="features-list">
+            <li>Everything in Basic</li>
+            <li>High-yield savings account</li>
+            <li>Investment accounts</li>
+            <li>Free wire transfers</li>
+            <li>Premium debit card</li>
+            <li>Financial planning tools</li>
+            <li class="not-included">Dedicated advisor</li>
+            <li class="not-included">Private banking</li>
+          </ul>
+
+          <a href="/login" class="btn-pricing btn-pricing-outline">Get Plus</a>
+        </div>
+
+        <!-- Premium Tier (Featured) -->
+        <div class="pricing-card featured">
+          <h3 class="tier-name">Premium</h3>
+          <div class="tier-price">
+            <span class="currency">$</span>25
+            <span class="period">/month</span>
+          </div>
+          <p class="tier-description">Comprehensive financial solutions</p>
+
+          <ul class="features-list">
+            <li>Everything in Plus</li>
+            <li>Unlimited accounts</li>
+            <li>Dedicated financial advisor</li>
+            <li>Priority customer support</li>
+            <li>Advanced investment options</li>
+            <li>Estate planning services</li>
+            <li>Tax optimization tools</li>
+            <li>Concierge banking</li>
+          </ul>
+
+          <a href="/login" class="btn-pricing btn-pricing-primary">Get Premium</a>
+        </div>
+
+        <!-- Private Tier -->
+        <div class="pricing-card">
+          <h3 class="tier-name">Private</h3>
+          <div class="tier-price">
+            <span class="currency">$</span>100
+            <span class="period">/month</span>
+          </div>
+          <p class="tier-description">Exclusive private banking experience</p>
+
+          <ul class="features-list">
+            <li>Everything in Premium</li>
+            <li>Private banker</li>
+            <li>Custom investment strategies</li>
+            <li>Wealth management services</li>
+            <li>Exclusive events & networking</li>
+            <li>24/7 dedicated support</li>
+            <li>Luxury benefits</li>
+            <li>Family office services</li>
+          </ul>
+
+          <a href="/login" class="btn-pricing btn-pricing-outline">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrapper bg-repeat bg-fixed bg-image section-frame xl:mx-6 xl:rounded-[1rem] lg:mx-6 lg:rounded-[1rem] md:mx-6 md:rounded-[1rem]">
+      <div class="container pb-16 xl:pb-20 lg:pb-20 md:pb-20">
+        <div class="text-[#6b7280] text-center">
+          <p>&copy; 2026 Quantum Bank. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="./static/js/plugins.js"></script>
+  <script src="./static/js/theme.js"></script>
+</body>
+</html>

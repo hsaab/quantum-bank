@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Quantum Bank</title>
+
+  <!-- Styles for v2 pricing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./static/webfonts/unicons.css">
+  <link rel="stylesheet" href="./static/css/plugins.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/grape.css">
+
+  <!-- Styles for old pricing -->
+  <link rel="stylesheet" href="./static/css/simple.css">
+
+  <!-- Styles for v3 pricing (dev theme) -->
+  <style>
+    /* Hide variants by default - only one shown at a time */
+    .pricing-variant {
+      display: none;
+    }
+    .pricing-variant.active {
+      display: block !important;
+    }
+
+    /* Demo Mode Indicator */
+    .demo-mode-badge {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #605dba 0%, #4f4ca8 100%);
+      color: #fff;
+      padding: 5px 11px;
+      border-radius: 14px;
+      font-size: 8px;
+      font-weight: 600;
+      z-index: 9999;
+      box-shadow: 0 3px 8px rgba(96, 93, 186, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Manrope', sans-serif;
+      letter-spacing: 0.3px;
+      animation: pulse 2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .demo-mode-badge::before {
+      content: '⚡';
+      font-size: 9px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.9;
+        transform: scale(1.02);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .demo-mode-badge {
+        bottom: 10px;
+        left: 10px;
+        padding: 4px 8px;
+        font-size: 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+  {% if demo_mode == True %}
+  <div class="demo-mode-badge">DEMO MODE</div>
+  {% endif %}
+  <!-- Old Pricing Variant (full page embedded) -->
+  <iframe id="old-pricing-variant" class="pricing-variant" src="/old-pricing-static" style="width:100%;height:100vh;border:none;" data-variant="old_home"></iframe>
+
+  <!-- V2 Pricing Variant (full page embedded) -->
+  <iframe id="new-pricing-variant" class="pricing-variant" src="/new-pricing-static" style="width:100%;height:100vh;border:none;" data-variant="new_home"></iframe>
+
+  <!-- V3 Developer-Focused Pricing Variant (full page embedded) -->
+  <iframe id="v3-pricing-variant" class="pricing-variant" src="/v3-pricing-static" style="width:100%;height:100vh;border:none;" data-variant="dev_home"></iframe>
+
+  <!-- Split.io Client-Side SDK -->
+  <script src="https://cdn.split.io/sdk/split-11.0.1.min.js" integrity="sha384-zuHjwWMmcmD86VoJj0CJ3sp/+EJ9r6hlEHbjxC0CEpatleRiPEGeE6fLQgcV8PHl" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/split-client.js') }}" defer></script>
+</body>
+</html>

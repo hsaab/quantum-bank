@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Bank - Developer-First Banking</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/logos/favicon-32x32.svg') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/logos/apple-touch-icon.svg') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #667eea;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      border: 2px solid #667eea;
+      color: #667eea;
+    }
+
+    .btn-secondary:hover {
+      background: #667eea;
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff 0%, #667eea 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #b8b8d1;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .code-snippet {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      position: relative;
+    }
+
+    .code-snippet::before {
+      content: '$ quantum-cli';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #667eea;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .code-snippet pre {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+
+    .code-snippet .comment {
+      color: #7c7c9a;
+    }
+
+    .code-snippet .keyword {
+      color: #ff79c6;
+    }
+
+    .code-snippet .string {
+      color: #50fa7b;
+    }
+
+    .code-snippet .number {
+      color: #f1fa8c;
+    }
+
+    /* Features */
+    .features {
+      padding: 80px 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 60px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 40px;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: #667eea;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .feature-card p {
+      color: #b8b8d1;
+      line-height: 1.7;
+    }
+
+    /* API Docs Preview */
+    .api-docs {
+      padding: 80px 0;
+    }
+
+    .docs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .doc-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .doc-card h3 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .doc-card pre {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .endpoint {
+      color: #50fa7b;
+    }
+
+    .method {
+      color: #8be9fd;
+      font-weight: 700;
+    }
+
+    /* Stats */
+    .stats {
+      padding: 80px 0;
+      background: rgba(102, 126, 234, 0.1);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat h2 {
+      font-size: 48px;
+      font-weight: 800;
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .stat p {
+      color: #b8b8d1;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: #7c7c9a;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .docs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body data-variant="dev_home" data-testid="home-variant-dev">
+  <header>
+    <nav class="container">
+      <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="{{ url_for('static', filename='images/logos/quantum-bank-logo-white.svg') }}" alt="Quantum Bank" style="height: 40px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#docs">API Docs</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/login" data-testid="nav-login">Login</a></li>
+      </ul>
+      <a href="/login" class="btn btn-primary" data-testid="nav-cta">Get Started</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Banking Built for Developers</h1>
+      <p>Modern banking infrastructure with powerful APIs, CLI tools, and native integrations. Build financial products in minutes, not months.</p>
+
+      <div class="hero-cta">
+        <a href="/login" class="btn btn-primary" data-testid="hero-cta-primary">Start Building</a>
+        <a href="#docs" class="btn btn-secondary">View Docs</a>
+      </div>
+
+      <div class="code-snippet">
+        <pre><code><span class="comment"># Install the Quantum CLI</span>
+<span class="keyword">npm install</span> -g quantum-cli
+
+<span class="comment"># Authenticate</span>
+quantum login
+
+<span class="comment"># Create a new account</span>
+quantum accounts create <span class="string">--name</span> <span class="string">"Production"</span> <span class="string">--currency</span> USD
+
+<span class="comment"># Make a transfer</span>
+quantum transfer <span class="number">1000</span> <span class="string">--to</span> acc_2k4j5h6g <span class="string">--memo</span> <span class="string">"Invoice #1234"</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Everything You Need to Build</h2>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>RESTful API</h3>
+          <p>Complete banking operations via REST API. Create accounts, transfer funds, check balances, and more with simple HTTP requests.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>CLI Access</h3>
+          <p>Powerful command-line tools for developers. Automate workflows, manage accounts, and integrate with your CI/CD pipelines.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔌</div>
+          <h3>Native SDKs</h3>
+          <p>Drop-in libraries for Python, Node.js, Go, and Ruby. Get started in seconds with your favorite programming language.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>LLM & MCP Ready</h3>
+          <p>Built-in Model Context Protocol support. Let AI agents manage your finances, automate transactions, and analyze spending patterns.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3>Enterprise Security</h3>
+          <p>Bank-grade encryption, OAuth 2.0, API key rotation, IP whitelisting, and comprehensive audit logs out of the box.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Real-time Webhooks</h3>
+          <p>Subscribe to account events and get instant notifications. Build reactive applications that respond to financial activity in real-time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="docs" class="api-docs">
+    <div class="container">
+      <h2 class="section-title">API Documentation</h2>
+
+      <div class="docs-grid">
+        <div class="doc-card">
+          <h3>GET /api/v1/accounts</h3>
+          <pre><code><span class="comment">// List all accounts</span>
+<span class="method">GET</span> <span class="endpoint">https://api.qbank.dev/v1/accounts</span>
+
+<span class="comment">// Response</span>
+{
+  <span class="string">"accounts"</span>: [
+    {
+      <span class="string">"id"</span>: <span class="string">"acc_1a2b3c4d"</span>,
+      <span class="string">"name"</span>: <span class="string">"Checking"</span>,
+      <span class="string">"balance"</span>: <span class="number">12500.50</span>,
+      <span class="string">"currency"</span>: <span class="string">"USD"</span>
+    }
+  ]
+}</code></pre>
+        </div>
+
+        <div class="doc-card">
+          <h3>POST /api/v1/transfers</h3>
+          <pre><code><span class="comment">// Create a transfer</span>
+<span class="method">POST</span> <span class="endpoint">https://api.qbank.dev/v1/transfers</span>
+
+{
+  <span class="string">"from"</span>: <span class="string">"acc_1a2b3c4d"</span>,
+  <span class="string">"to"</span>: <span class="string">"acc_5e6f7g8h"</span>,
+  <span class="string">"amount"</span>: <span class="number">1000</span>,
+  <span class="string">"memo"</span>: <span class="string">"Payment"</span>
+}</code></pre>
+        </div>
+
+        <div class="doc-card">
+          <h3>GET /api/v1/transactions</h3>
+          <pre><code><span class="comment">// Query transactions</span>
+<span class="method">GET</span> <span class="endpoint">https://api.qbank.dev/v1/transactions</span>
+  <span class="string">?account_id=acc_1a2b3c4d</span>
+  <span class="string">&limit=50</span>
+  <span class="string">&from_date=2025-01-01</span>
+
+<span class="comment">// Returns paginated results</span></code></pre>
+        </div>
+
+        <div class="doc-card">
+          <h3>MCP Integration</h3>
+          <pre><code><span class="comment">// Claude Desktop config.json</span>
+{
+  <span class="string">"mcpServers"</span>: {
+    <span class="string">"quantum-bank"</span>: {
+      <span class="string">"command"</span>: <span class="string">"npx"</span>,
+      <span class="string">"args"</span>: [<span class="string">"quantum-mcp"</span>],
+      <span class="string">"env"</span>: {
+        <span class="string">"QUANTUM_API_KEY"</span>: <span class="string">"qb_..."</span>
+      }
+    }
+  }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <h2>99.99%</h2>
+          <p>Uptime SLA</p>
+        </div>
+        <div class="stat">
+          <h2>&lt;100ms</h2>
+          <p>API Response</p>
+        </div>
+        <div class="stat">
+          <h2>10k+</h2>
+          <p>Developers</p>
+        </div>
+        <div class="stat">
+          <h2>$5B+</h2>
+          <p>Processed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Quantum Bank. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
